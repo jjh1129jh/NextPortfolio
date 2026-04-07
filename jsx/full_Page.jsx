@@ -27,36 +27,21 @@ export default function FullPageScroll({ dataobjA, dataobjB }) {
   }, []);
 
   return (
-    <main className="relative w-full h-screen overflow-hidden bg-black text-white font-sans selection:bg-white selection:text-black">
+    <main className="relative w-full h-screen overflow-hidden bg-[#181818] text-white font-sans selection:bg-white selection:text-black">
 
-      {/* 상단 = PC */}
+      {/* 상단 페이지 표시 */}
       <div className="fixed top-10 right-10 z-60 mix-blend-difference hidden md:flex flex-col items-end">
         <span className="text-4xl font-black tracking-tighter leading-none">{currentPage.toString().padStart(2, '0')}</span>
         <div className="w-12 h-[2px] bg-white my-2" />
         <span className="text-xs font-mono opacity-50 uppercase tracking-widest">Total 4</span>
       </div>
 
-      {/* 측면 = PC */}
-      <div className="fixed left-6 top-1/2 -translate-y-1/2 z-60 flex flex-col gap-3 md:gap-4">
+      {/* 측면 페이지 표시 */}
+      <div className="fixed left-6 bottom-[30px] md:bottom-auto md:top-1/2 md:-translate-y-1/2 z-60 flex flex-col gap-3 md:gap-4">
         {[...Array(5)].map((_, i) => (
           <div key={i} className={`w-1.5 h-1.5 rounded-full transition-all duration-500 ${currentPage === i + 1 ? 'bg-white h-8' : 'bg-white/30'}`} />
         ))}
       </div>
-
-      {/* 하단 = 모바일 */}
-      {/* <div className="fixed bottom-10 left-1/2 -translate-x-1/2 z-60 md:hidden flex flex-col items-center gap-3 mix-blend-difference w-1/4">
-        <div className="flex gap-1.5 w-full justify-center">
-          {[...Array(5)].map((_, i) => (
-            <div
-              key={i}
-              className={`h-[4px] rounded-full transition-all duration-300 ${currentPage === i + 1 ? 'flex-1 bg-white' : 'w-2 bg-white/20'}`}
-            />
-          ))}
-        </div>
-        <span className="text-[10px] font-mono tracking-[0.3em] opacity-60 uppercase">
-          Page {currentPage} / 4
-        </span>
-      </div> */}
 
       {/* 메인 세로 스크롤 컨테이너 */}
       <div ref={containerRef} className="h-screen overflow-y-auto snap-y snap-mandatory no-scrollbar scroll-auto">
@@ -193,8 +178,8 @@ export function HorizontalSlider({ dataobjA, dataobjB, pageIdx, bgClass }) {
       style={{ touchAction: 'pan-y' }}
     >
       {sliderData.map((item, id) => (
-        <div key={id} className={`min-w-full h-full snap-center snap-always flex flex-col items-center justify-center border-x border-white/5 ${bgClass}`}>
-          <div className="text-center animate-fadeIn pointer-events-none px-6">
+        <div key={id} className={`min-w-full h-full snap-center snap-always flex flex-col items-center justify-center border-x border-white/5 ${bgClass} p-4 md:p-12`}>
+          <div className="text-center animate-fadeIn pointer-events-none">
             <h2 className="text-5xl md:text-7xl font-black mb-2 tracking-tighter uppercase leading-none">SECTION {pageIdx}</h2>
             <p className="pointer-events-auto cursor-pointer" onClick={() => { portFolioLink(item.id) }}>{item.id}</p>
             <p className="text-xl md:text-2xl font-light opacity-60">{item.content}</p>
