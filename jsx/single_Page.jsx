@@ -35,11 +35,11 @@ export function PageNum4() { // 4페이지 - 간단한 자기소개 + 기술 스
         isMobile 
         ?   (
                 setIconData([...iconDataM]),
-                setGroupSizes([4, 4, 4, 4])
+                setGroupSizes([3, 4, 3, 4, 3])
             )
         :   (
                 setIconData([...iconDataPC]),
-                setGroupSizes([2, 4, 4, 4, 2])
+                setGroupSizes([2, 4, 5, 4, 2])
             )
     },[isMobile])
     
@@ -48,31 +48,40 @@ export function PageNum4() { // 4페이지 - 간단한 자기소개 + 기술 스
             <div className="w-full md:w-[1400px] h-full mx-auto animate-fadeIn flex flex-col md:flex-row justify-center md:justify-between gap-6 md:gap-0">
                 <div className="w-full md:w-[40%] flex flex-col items-center justify-center gap-6 md:gap-8">
                     <img className="w-40 md:w-80" src="/img/developer.png" alt="개발자 캐릭터" />
-                    <p className="w-[80%]">내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.</p>
+                    <p className="w-[80%]">내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.</p>
                 </div>
                 <div className="w-full md:w-[60%] flex items-center justify-center">
-                    <div className="flex justify-center gap-2 md:gap-6">
+                    <div className="w-[90%] md:w-auto flex flex-col md:flex-row justify-center gap-2 md:gap-5">
                         {
                             groupSizes.map((index, i) =>{
                                 const group = iconData.slice(currentIndex, currentIndex + index);
                                 currentIndex += index;
                                 return (
-                                    <div key={i} className="w-[20%] md:w-32 flex flex-col items-center justify-center gap-2 md:gap-6">
+                                    <div key={i} className="w-full md:w-30 flex md:flex-col justify-center gap-2 md:gap-5">
                                     {group.map((obj, j) => (
                                         <div
                                             key={j}
-                                            className="w-full flex flex-col items-center justify-center gap-1 md:gap-2 rounded-xl p-[2px] border-1 md:border-2 border-transparent"
+                                            className="w-1/4 md:w-full h-20 md:h-30 flex flex-col items-center justify-center gap-1 md:gap-2 rounded-xl p-[2px] border-1 md:border-2 border-transparent"
                                             style={{
                                                 backgroundImage: "linear-gradient(#181818, #181818), radial-gradient(circle at top left, #51a2e9, #ff4d5a)",
                                                 backgroundOrigin: "border-box",
                                                 backgroundClip: "content-box, border-box",
                                             }}
                                         >
-                                            <div className="h-1/2 aspect-[2/1] md:aspect-[3/2] flex items-center justify-center">
-                                                <img className={obj.style} src={`/img/svg_${obj.file}.svg`} alt={obj.name} />
+                                            <div className="w-full h-1/2 md:h-1/2 flex items-center justify-center">
+                                                <img className={`${obj.style} mt-3 md:mt-5`} src={`/img/svg_${obj.file}.svg`} alt={obj.name} />
                                             </div>
-                                            
-                                            <p className="text-[8.5px] md:text-sm font-light md:font-semibold uppercase tracking-wider">{obj.name}</p>
+                                            <div className="w-full h-1/2 flex items-center justify-center">
+                                                <p className="text-[8.5px] md:text-sm font-light md:font-semibold uppercase tracking-wider text-center">
+                                                    {obj.name.split('|').map((index, i) => (
+                                                      <span key={i}>
+                                                        {index}
+                                                        {i !== obj.name.split('|').length - 1 && <br />}
+                                                      </span>
+                                                    ))}
+                                                </p>
+                                            </div>
+
                                         </div>
                                     ))}
                                 </div>
