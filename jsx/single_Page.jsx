@@ -21,15 +21,42 @@ export function PageNum1() { // 1페이지 - 배너페이지
     )
 }
 
-export function PageNum4({pageIdx}) { // 4페이지 - 간단한 자기소개 + 기술 스택
+export function PageNum4() { // 4페이지 - 간단한 자기소개 + 기술 스택
     return(
         <div className={`w-full h-full p-4 md:p-12`}>
-            <div className="animate-fadeIn flex justify-between">
-                <div className="w-1/2">
+            <div className="animate-fadeIn flex-col md:flex-row justify-between">
+                <div className="w-full md:w-1/2">
                 <img src="/img/developer.png" alt="개발자 캐릭터" />
                 </div>
-                <div className="w-1/2">
-                    <img src="/img/developer.png" alt="개발자 캐릭터" />
+                <div className="w-full md:w-1/2">
+                    <div className="flex justify-center">
+                        <div className="flex flex-col items-center justify-center gap-3">
+                            <p>js</p>
+                            <p>jquery</p>
+                        </div>
+                        <div className="flex flex-col items-center justify-center gap-3">
+                            <p>html</p>
+                            <p>css</p>
+                            <p>git</p>
+                            <p>photoshop</p>
+                        </div>
+                        <div className="flex flex-col items-center justify-center gap-3">
+                            <p>scss</p>
+                            <p>module css</p>
+                            <p>redux</p>
+                            <p>Illustrator</p>
+                        </div>
+                        <div className="flex flex-col items-center justify-center gap-3">
+                            <p>tailwind</p>
+                            <p>bootstrap</p>
+                            <p>rest.api</p>
+                            <p>Lightroom</p>
+                        </div>
+                        <div className="flex flex-col items-center justify-center gap-3">
+                            <p>react</p>
+                            <p>next.js</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             
@@ -38,6 +65,8 @@ export function PageNum4({pageIdx}) { // 4페이지 - 간단한 자기소개 + �
 }
 
 export function PageNum5({pageIdx}) { // 5페이지 - 인적사항 + Footer
+    const name = ["html", "css", "tailwind", "js", "react", "next"]
+    const style = ["", "", "", "", "", "invert-90"]
     return (
         <div className={`w-full h-full flex flex-col items-center flex-1 text-center`}>
             <div className="w-full animate-fadeIn flex-1 p-4 md:p-12">
@@ -45,7 +74,7 @@ export function PageNum5({pageIdx}) { // 5페이지 - 인적사항 + Footer
               <p className="mt-4 opacity-40 font-mono tracking-widest uppercase text-xs">Scroll Down</p>
             </div>
             <footer className="w-full h-32 md:h-34 flex flex-col">
-                <div className="w-full h-1/2 md:h-[60%] flex gap-1 md:gap-2 pt-4 md:pb-3 pr-6 md:pr-3 items-center md:items-end justify-center bg-[#242424] relative">
+                <div className="w-full h-1/2 md:h-[60%] flex gap-1 md:gap-2 pt-6 md:pb-3 pr-6 md:pr-3 items-center md:items-end justify-center bg-[#242424] relative">
                     <img className="w-8 mb-2" src="/img/logo.png" alt="logo" />
                     <div className="text-center md:text-left">
                         <h3 className="opacity-80 text-[16px] md:text-[21px] md:leading-[1.1]">JH PORTFOLIO</h3>
@@ -54,30 +83,13 @@ export function PageNum5({pageIdx}) { // 5페이지 - 인적사항 + Footer
                 </div>
                 <div className="w-full h-[40%] bg-[#242424] md:flex md:items-center md:justify-center">
                     <div className="w-full h-full flex items-center md:items-start justify-center gap-3 md:gap-5 pr-3 md:pr-0">
-                        <div className="flex items-center">
-                            <img className="w-5" src="/img/svg_html.svg" alt="html" />
-                            <span className="hidden">Html</span>
-                        </div>
-                        <div className="flex items-center">
-                            <img className="w-5" src="/img/svg_css.svg" alt="Css" />
-                            <span className="hidden">Css</span>
-                        </div>
-                        <div className="flex items-center">
-                            <img className="w-5" src="/img/svg_tailwind.svg" alt="Tailwind" />
-                            <span className="hidden">Tailwind</span>
-                        </div>
-                        <div className="flex items-center">
-                            <img className="w-5" src="/img/svg_js.svg" alt="Js" />
-                            <span className="hidden">Js</span>
-                        </div>
-                        <div className="flex items-center">
-                            <img className="w-5" src="/img/svg_react.svg" alt="React" />
-                            <span className="hidden">React</span>
-                        </div>
-                        <div className="flex items-center">
-                            <img className="w-5 invert-90" src="/img/svg_next.svg" alt="Next" />
-                            <span className="hidden">Next.js</span>
-                        </div>
+                        {
+                            name.map((index, i)=>(
+                                <div className="flex items-center" key={i}>
+                                    <img className={`w-5 ${style[i]}`} src={`/img/svg_${index}.svg`} alt={index} />
+                                </div>
+                            ))
+                        }
                     </div>
                 </div>
                 <div className="w-full h-[10%] bg-[#242424] md:hidden"/>
