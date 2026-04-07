@@ -1,0 +1,2 @@
+[tsParticles]
+npm install @tsparticles/react @tsparticles/slim
