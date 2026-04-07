@@ -27,7 +27,7 @@ export default function FullPageScroll({ dataobjA, dataobjB }) {
   }, []);
 
   return (
-    <main className="relative w-full h-screen overflow-hidden bg-[#181818] text-white font-sans selection:bg-white selection:text-black">
+    <main className="relative w-full h-[100dvh] overflow-hidden bg-[#181818] text-white font-sans selection:bg-white selection:text-black">
 
       {/* 상단 페이지 표시 */}
       <div className="fixed top-10 right-10 z-60 mix-blend-difference hidden md:flex flex-col items-end">
