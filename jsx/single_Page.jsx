@@ -45,8 +45,8 @@ export function PageNum4() { // 4페이지 - 간단한 자기소개 + 기술 스
     
     return(
         <div className={`w-full h-full p-4 md:p-12`}>
-            <div className="w-full md:w-[1400px] h-full mx-auto animate-fadeIn flex flex-col md:flex-row justify-center md:justify-between gap-10 md:gap-0">
-                <div className="w-full md:w-[40%] flex flex-col items-center justify-center gap-8">
+            <div className="w-full md:w-[1400px] h-full mx-auto animate-fadeIn flex flex-col md:flex-row justify-center md:justify-between gap-6 md:gap-0">
+                <div className="w-full md:w-[40%] flex flex-col items-center justify-center gap-6 md:gap-8">
                     <img className="w-40 md:w-80" src="/img/developer.png" alt="개발자 캐릭터" />
                     <p className="w-[80%]">내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.</p>
                 </div>
@@ -68,7 +68,7 @@ export function PageNum4() { // 4페이지 - 간단한 자기소개 + 기술 스
                                                 backgroundClip: "content-box, border-box",
                                             }}
                                         >
-                                            <div className="h-1/2 aspect-[5/3] md:aspect-[3/2] flex items-center justify-center">
+                                            <div className="h-1/2 aspect-[2/1] md:aspect-[3/2] flex items-center justify-center">
                                                 <img className={obj.style} src={`/img/svg_${obj.file}.svg`} alt={obj.name} />
                                             </div>
                                             
