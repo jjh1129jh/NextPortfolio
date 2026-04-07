@@ -33,11 +33,11 @@ export default function FullPageScroll({ dataobjA, dataobjB }) {
       <div className="fixed top-10 right-10 z-60 mix-blend-difference hidden md:flex flex-col items-end">
         <span className="text-4xl font-black tracking-tighter leading-none">{currentPage.toString().padStart(2, '0')}</span>
         <div className="w-12 h-[2px] bg-white my-2" />
-        <span className="text-xs font-mono opacity-50 uppercase tracking-widest">Total 4</span>
+        <span className="text-xs font-mono opacity-50 uppercase tracking-widest">Total 5</span>
       </div>
 
       {/* 측면 페이지 표시 */}
-      <div className="fixed left-6 bottom-[22px] md:bottom-auto md:top-1/2 md:-translate-y-1/2 z-60 flex flex-col gap-2 md:gap-4">
+      <div className="fixed left-6 bottom-[21px] md:bottom-auto md:top-1/2 md:-translate-y-1/2 z-60 flex flex-col gap-2 md:gap-4">
         {[...Array(5)].map((_, i) => (
           <div key={i} className={`w-1.5 h-1.5 rounded-full transition-all duration-500 ${currentPage === i + 1 ? 'bg-white h6 md:bg-white h-8' : 'bg-white/30'}`} />
         ))}

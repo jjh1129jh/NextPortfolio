@@ -1,5 +1,9 @@
 "use client"
 
+import { useEffect, useState } from "react";
+import { useMobile } from "./useMobile";
+import { iconDataM, iconDataPC } from "./iconData";
+
 export default function SinglePage({ pageIdx }) {
   return (
     <>
@@ -22,40 +26,59 @@ export function PageNum1() { // 1페이지 - 배너페이지
 }
 
 export function PageNum4() { // 4페이지 - 간단한 자기소개 + 기술 스택
+    let currentIndex = 0;
+    const isMobile = useMobile();
+    const [iconData, setIconData] = useState([])
+    const [groupSizes, setGroupSizes] = useState([])
+
+    useEffect (()=>{
+        isMobile 
+        ?   (
+                setIconData([...iconDataM]),
+                setGroupSizes([4, 4, 4, 4])
+            )
+        :   (
+                setIconData([...iconDataPC]),
+                setGroupSizes([2, 4, 4, 4, 2])
+            )
+    },[isMobile])
+    
     return(
         <div className={`w-full h-full p-4 md:p-12`}>
-            <div className="animate-fadeIn flex-col md:flex-row justify-between">
-                <div className="w-full md:w-1/2">
-                <img src="/img/developer.png" alt="개발자 캐릭터" />
+            <div className="w-full md:w-[1400px] h-full mx-auto animate-fadeIn flex flex-col md:flex-row justify-center md:justify-between gap-10 md:gap-0">
+                <div className="w-full md:w-[40%] flex flex-col items-center justify-center gap-8">
+                    <img className="w-40 md:w-80" src="/img/developer.png" alt="개발자 캐릭터" />
+                    <p className="w-[80%]">내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.</p>
                 </div>
-                <div className="w-full md:w-1/2">
-                    <div className="flex justify-center">
-                        <div className="flex flex-col items-center justify-center gap-3">
-                            <p>js</p>
-                            <p>jquery</p>
-                        </div>
-                        <div className="flex flex-col items-center justify-center gap-3">
-                            <p>html</p>
-                            <p>css</p>
-                            <p>git</p>
-                            <p>photoshop</p>
-                        </div>
-                        <div className="flex flex-col items-center justify-center gap-3">
-                            <p>scss</p>
-                            <p>module css</p>
-                            <p>redux</p>
-                            <p>Illustrator</p>
-                        </div>
-                        <div className="flex flex-col items-center justify-center gap-3">
-                            <p>tailwind</p>
-                            <p>bootstrap</p>
-                            <p>rest.api</p>
-                            <p>Lightroom</p>
-                        </div>
-                        <div className="flex flex-col items-center justify-center gap-3">
-                            <p>react</p>
-                            <p>next.js</p>
-                        </div>
+                <div className="w-full md:w-[60%] flex items-center justify-center">
+                    <div className="flex justify-center gap-2 md:gap-6">
+                        {
+                            groupSizes.map((index, i) =>{
+                                const group = iconData.slice(currentIndex, currentIndex + index);
+                                currentIndex += index;
+                                return (
+                                    <div key={i} className="w-[20%] md:w-32 flex flex-col items-center justify-center gap-2 md:gap-6">
+                                    {group.map((obj, j) => (
+                                        <div
+                                            key={j}
+                                            className="w-full flex flex-col items-center justify-center gap-1 md:gap-2 rounded-xl p-[2px] border-1 md:border-2 border-transparent"
+                                            style={{
+                                                backgroundImage: "linear-gradient(#181818, #181818), radial-gradient(circle at top left, #51a2e9, #ff4d5a)",
+                                                backgroundOrigin: "border-box",
+                                                backgroundClip: "content-box, border-box",
+                                            }}
+                                        >
+                                            <div className="h-1/2 aspect-[5/3] md:aspect-[3/2] flex items-center justify-center">
+                                                <img className={obj.style} src={`/img/svg_${obj.file}.svg`} alt={obj.name} />
+                                            </div>
+                                            
+                                            <p className="text-[8.5px] md:text-sm font-light md:font-semibold uppercase tracking-wider">{obj.name}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                                )
+                            })
+                        }
                     </div>
                 </div>
             </div>
@@ -97,3 +120,5 @@ export function PageNum5({pageIdx}) { // 5페이지 - 인적사항 + Footer
         </div>
     )
 }
+
+
