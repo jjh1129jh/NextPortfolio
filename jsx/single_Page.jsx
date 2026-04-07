@@ -80,6 +80,7 @@ export function PageNum5({pageIdx}) { // 5페이지 - 인적사항 + Footer
                         </div>
                     </div>
                 </div>
+                <div className="w-full h-[10%] bg-[#242424] md:hidden"/>
             </footer>
         </div>
     )
