@@ -37,9 +37,9 @@ export default function FullPageScroll({ dataobjA, dataobjB }) {
       </div>
 
       {/* 측면 페이지 표시 */}
-      <div className="fixed left-6 bottom-[30px] md:bottom-auto md:top-1/2 md:-translate-y-1/2 z-60 flex flex-col gap-3 md:gap-4">
+      <div className="fixed left-6 bottom-[21px] md:bottom-auto md:top-1/2 md:-translate-y-1/2 z-60 flex flex-col gap-2 md:gap-4">
         {[...Array(5)].map((_, i) => (
-          <div key={i} className={`w-1.5 h-1.5 rounded-full transition-all duration-500 ${currentPage === i + 1 ? 'bg-white h-8' : 'bg-white/30'}`} />
+          <div key={i} className={`w-1.5 h-1.5 rounded-full transition-all duration-500 ${currentPage === i + 1 ? 'bg-white h6 md:bg-white h-8' : 'bg-white/30'}`} />
         ))}
       </div>
 

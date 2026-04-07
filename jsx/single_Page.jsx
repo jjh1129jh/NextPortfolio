@@ -44,16 +44,16 @@ export function PageNum5({pageIdx}) { // 5페이지 - 인적사항 + Footer
               <h2 className="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-none">SECTION {pageIdx}</h2>
               <p className="mt-4 opacity-40 font-mono tracking-widest uppercase text-xs">Scroll Down</p>
             </div>
-            <footer className="w-full h-45 md:h-34 flex flex-col">
-                <div className="w-full h-full md:h-[60%] flex flex-col md:flex-row md:gap-2 pb-5 md:pb-3 md:pr-3 items-center md:items-end justify-center bg-[#242424] relative">
-                    <img className="w-8 mt-3 mb-2 md:mt-0" src="/img/logo.png" alt="logo" />
+            <footer className="w-full h-32 md:h-34 flex flex-col">
+                <div className="w-full h-1/2 md:h-[60%] flex gap-1 md:gap-2 pt-4 md:pb-3 pr-6 md:pr-3 items-center md:items-end justify-center bg-[#242424] relative">
+                    <img className="w-8 mb-2" src="/img/logo.png" alt="logo" />
                     <div className="text-center md:text-left">
                         <h3 className="opacity-80 text-[16px] md:text-[21px] md:leading-[1.1]">JH PORTFOLIO</h3>
-                        <p className="opacity-80 text-[14px]">From. JIHWAN JEONG</p>
+                        <p className="opacity-80 text-[11px] md:text-[14px]">From. JIHWAN JEONG</p>
                     </div>
                 </div>
                 <div className="w-full h-[40%] bg-[#242424] md:flex md:items-center md:justify-center">
-                    <div className="w-full h-full flex items-center md:items-start justify-end md:justify-center gap-3 md:gap-5 pr-3 md:pr-0">
+                    <div className="w-full h-full flex items-center md:items-start justify-center gap-3 md:gap-5 pr-3 md:pr-0">
                         <div className="flex items-center">
                             <img className="w-5" src="/img/svg_html.svg" alt="html" />
                             <span className="hidden">Html</span>
