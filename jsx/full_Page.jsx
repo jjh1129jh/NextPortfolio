@@ -44,7 +44,7 @@ export default function FullPageScroll({ dataobjA, dataobjB }) {
       </div>
 
       {/* 메인 세로 스크롤 컨테이너 */}
-      <div ref={containerRef} className="h-screen overflow-y-auto snap-y snap-mandatory no-scrollbar scroll-auto">
+      <div ref={containerRef} className="h-dvh overflow-y-auto snap-y snap-mandatory no-scrollbar scroll-auto">
         {[...Array(5)].map((_, i) => {
           const pageIdx = i + 1;
           const isHorizontal = pageIdx === 2 || pageIdx === 3;
@@ -56,7 +56,7 @@ export default function FullPageScroll({ dataobjA, dataobjB }) {
               </div>
               <section
                 id={`section-${pageIdx}`}
-                className="snap-section w-full h-screen snap-start snap-always flex items-center justify-center relative overflow-hidden z-51"
+                className="snap-section w-full h-dvh snap-start snap-always flex items-center justify-center relative overflow-hidden z-51"
               >
                 {isHorizontal && (
                   <HorizontalSlider pageIdx={pageIdx} dataobjA={dataobjA} dataobjB={dataobjB} />
