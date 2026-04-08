@@ -28,8 +28,15 @@ export function PageNum1() { // 1페이지 - 배너페이지
 
 export function PageNum4({type}) { // 4페이지 - 간단한 자기소개 + 기술 스택
     return(
-        <div className={`w-full h-full p-4 md:p-12`}>
-            <div className="w-full md:w-[1400px] h-full mx-auto animate-fadeIn flex flex-col md:flex-row justify-center md:justify-between gap-6 md:gap-0">
+        <div className={`w-full h-full p-4 md:p-12 relative`}>
+            {
+                (type === "All" || type === "HALF1") && <div className="absolute top-[100px] left-1/2 -translate-x-1/2 -translate-y-1/2"><h2 className="text-4xl relative before:content-[''] before:absolute before:block before:w-full before:h-1/3 before:bg-red-500 before:bottom-0 before:right-[-30px] before:-z-10">About</h2></div>
+            }
+            {
+                type === "HALF2" && <div className="absolute top-[100px] left-1/2 -translate-x-1/2 -translate-y-1/2"><h2 className="text-4xl relative before:content-[''] before:absolute before:block before:w-full before:h-1/3 before:bg-red-500 before:bottom-0 before:right-[-30px] before:-z-10">Skill</h2></div>
+            }
+            
+            <div className="w-full md:w-[1500px] h-full mx-auto animate-fadeIn flex flex-col md:flex-row justify-center md:justify-between gap-6 md:gap-0">
                 {
                     type === "All" && (<><PageNum4Top/><PageNum4Bottom/></>)
                 }
@@ -48,10 +55,10 @@ export function PageNum5({pageIdx}) { // 5페이지 - 인적사항 + Footer
     const name = ["html", "css", "tailwind", "js", "react", "next"]
     const style = ["", "", "", "", "", "invert-90"]
     return (
-        <div className={`w-full h-full flex flex-col items-center flex-1 text-center`}>
+        <div className={`w-full h-full flex flex-col items-center flex-1 text-center relative`}>
+            <div className="absolute top-[100px] left-1/2 -translate-x-1/2 -translate-y-1/2"><h2 className="text-4xl relative before:content-[''] before:absolute before:block before:w-full before:h-1/3 before:bg-red-500 before:bottom-0 before:right-[-30px] before:-z-10">Career</h2></div>
             <div className="w-full animate-fadeIn flex-1 p-4 md:p-12">
-              <h2 className="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-none">SECTION {pageIdx}</h2>
-              <p className="mt-4 opacity-40 font-mono tracking-widest uppercase text-xs">Scroll Down</p>
+
             </div>
             <footer className="w-full h-32 md:h-34 flex flex-col">
                 <div className="w-full h-1/2 md:h-[60%] flex gap-1 md:gap-2 pt-6 md:pb-3 pr-6 md:pr-3 items-center md:items-end justify-center bg-[#242424] relative">
@@ -80,7 +87,7 @@ export function PageNum5({pageIdx}) { // 5페이지 - 인적사항 + Footer
 
 export function PageNum4Top() {
     return (
-        <div className="w-full md:w-[40%] flex flex-col items-center justify-center gap-6 md:gap-8">
+        <div className="w-full md:w-[50%] flex flex-col items-center justify-center gap-6 md:gap-8">
             <img className="w-40 md:w-80" src="/img/developer.png" alt="개발자 캐릭터" />
             <p className="w-[80%]">내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.내용을 채워주세요.</p>
         </div>
@@ -106,45 +113,45 @@ export function PageNum4Bottom() {
     },[isMobile])
 
     return(
-                <div className="w-full md:w-[60%] flex items-center justify-center">
-                    <div className="w-[90%] md:w-auto flex flex-col md:flex-row justify-center gap-2 md:gap-5">
-                        {
-                            groupSizes.map((index, i) =>{
-                                const group = iconData.slice(currentIndex, currentIndex + index);
-                                currentIndex += index;
-                                return (
-                                    <div key={i} className="w-full md:w-30 flex md:flex-col justify-center gap-2 md:gap-5">
-                                    {group.map((obj, j) => (
-                                        <div
-                                            key={j}
-                                            className="w-1/4 md:w-full h-17 md:h-30 flex flex-col items-center justify-center gap-1 md:gap-2 rounded-xl p-[2px] border-1 md:border-2 border-transparent"
-                                            style={{
-                                                backgroundImage: "linear-gradient(#181818, #181818), radial-gradient(circle at top left, #51a2e9, #ff4d5a)",
-                                                backgroundOrigin: "border-box",
-                                                backgroundClip: "content-box, border-box",
-                                            }}
-                                        >
-                                            <div className="w-full h-1/2 md:h-1/2 flex items-center justify-center">
-                                                <img className={`${obj.style} mt-3 md:mt-5`} src={`/img/svg_${obj.file}.svg`} alt={obj.name} />
-                                            </div>
-                                            <div className="w-full h-1/2 flex items-center justify-center">
-                                                <p className="text-[8px] md:text-sm font-light md:font-semibold uppercase tracking-wider text-center flex-col items-center">
-                                                    {obj.name.split('|').map((index, i) => (
-                                                      <span key={i} className="leading-[75%]">
-                                                        {index}
-                                                        {i !== obj.name.split('|').length - 1 && <br />}
-                                                      </span>
-                                                    ))}
-                                                </p>
-                                            </div>
+        <div className="w-full md:w-[50%] flex items-center justify-center">
+            <div className="w-[90%] md:w-auto flex flex-col md:flex-row justify-center gap-2 md:gap-5">
+                {
+                    groupSizes.map((index, i) =>{
+                        const group = iconData.slice(currentIndex, currentIndex + index);
+                        currentIndex += index;
+                        return (
+                            <div key={i} className="w-full md:w-30 flex md:flex-col justify-center gap-2 md:gap-5">
+                            {group.map((obj, j) => (
+                                <div
+                                    key={j}
+                                    className="w-1/4 md:w-full h-17 md:h-30 flex flex-col items-center justify-center gap-1 md:gap-2 rounded-xl p-[2px] border-1 md:border-2 border-transparent"
+                                    style={{
+                                        backgroundImage: "linear-gradient(#181818, #181818), radial-gradient(circle at top left, #51a2e9, #ff4d5a)",
+                                        backgroundOrigin: "border-box",
+                                        backgroundClip: "content-box, border-box",
+                                    }}
+                                >
+                                    <div className="w-full h-1/2 md:h-1/2 flex items-center justify-center">
+                                        <img className={`${obj.style} mt-3 md:mt-5`} src={`/img/svg_${obj.file}.svg`} alt={obj.name} />
+                                    </div>
+                                    <div className="w-full h-1/2 flex items-center justify-center">
+                                        <p className="text-[8px] md:text-sm font-light md:font-semibold uppercase tracking-wider text-center flex-col items-center">
+                                            {obj.name.split('|').map((index, i) => (
+                                              <span key={i} className="leading-[75%]">
+                                                {index}
+                                                {i !== obj.name.split('|').length - 1 && <br />}
+                                              </span>
+                                            ))}
+                                        </p>
+                                    </div>
 
-                                        </div>
-                                    ))}
                                 </div>
-                                )
-                            })
-                        }
-                    </div>
-                </div>
+                            ))}
+                        </div>
+                        )
+                    })
+                }
+            </div>
+        </div>
     )
 }
