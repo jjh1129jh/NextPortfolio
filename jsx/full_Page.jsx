@@ -71,7 +71,7 @@ useEffect(() => {
               </div>
               <section
                 id={`section-${pageIdx}`}
-                className="snap-section w-full h-dvh snap-start snap-always flex items-center justify-center relative overflow-hidden z-51"
+                className="snap-section w-full h-dvh snap-start snap-always flex items-center justify-center relative overflow-hidden z-51 relative"
               >
                 {isHorizontal && (
                   <HorizontalSlider pageIdx={pageIdx} dataobjA={dataobjA} dataobjB={dataobjB} />
@@ -198,7 +198,7 @@ export function HorizontalSlider({ dataobjA, dataobjB, pageIdx, bgClass }) {
       onTouchStart={onDragStart}
       onTouchMove={onDragMove}
       onTouchEnd={onDragEnd}
-      className="w-full h-full flex overflow-x-hidden snap-x snap-mandatory no-scrollbar cursor-grab active:cursor-grabbing select-none relative"
+      className="w-full h-full flex overflow-x-hidden snap-x snap-mandatory no-scrollbar cursor-grab active:cursor-grabbing select-none"
       style={{ touchAction: 'pan-y' }}
     >
       <div className="absolute top-[100px] left-1/2 -translate-x-1/2 -translate-y-1/2"><h2 className="text-3xl md:text-4xl whitespace-nowrap relative before:content-[''] before:absolute before:block before:w-full before:h-1/3 before:bg-red-500 before:bottom-0 before:right-[-30px] before:-z-10">{pageIdx === 2 ? "Personal Project" : "Commercial Project"}</h2></div>
