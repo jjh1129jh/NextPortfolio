@@ -201,7 +201,7 @@ export function HorizontalSlider({ dataobjA, dataobjB, pageIdx, bgClass }) {
       className="w-full h-full flex overflow-x-hidden snap-x snap-mandatory no-scrollbar cursor-grab active:cursor-grabbing select-none relative"
       style={{ touchAction: 'pan-y' }}
     >
-      <div className="absolute top-[100px] left-1/2 -translate-x-1/2 -translate-y-1/2"><h2 className="text-4xl relative before:content-[''] before:absolute before:block before:w-full before:h-1/3 before:bg-red-500 before:bottom-0 before:right-[-30px] before:-z-10">{pageIdx === 2 ? "Personal Project" : "Commercial Project"}</h2></div>
+      <div className="absolute top-[100px] left-1/2 -translate-x-1/2 -translate-y-1/2"><h2 className="text-3xl md:text-4xl whitespace-nowrap relative before:content-[''] before:absolute before:block before:w-full before:h-1/3 before:bg-red-500 before:bottom-0 before:right-[-30px] before:-z-10">{pageIdx === 2 ? "Personal Project" : "Commercial Project"}</h2></div>
       {sliderData.map((item, id) => (
         <div key={id} className={`min-w-full h-full snap-center snap-always flex flex-col items-center justify-center border-x border-white/5 ${bgClass} p-4 md:p-12`}>
           <div className="text-center animate-fadeIn pointer-events-none">
