@@ -4,17 +4,22 @@ import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import ParticleBackground from "./particle_Bg.jsx";
 import SinglePage from "./single_Page.jsx";
+import { useMobile } from "./useMobile.jsx";
 
 // 메인
 export default function FullPageScroll({ dataobjA, dataobjB }) {
   const [currentPage, setCurrentPage] = useState(1);
   const containerRef = useRef(null);
+  const isMobile = useMobile()
+  const [totalArr, setTotalArr] = useState([])
 
-  useEffect(() => {
+useEffect(() => {
+    if (totalArr.length === 0) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting && entry.target.classList.contains('snap-section')) {
+          if (entry.isIntersecting) {
             const pageNum = parseInt(entry.target.id.replace("section-", ""));
             if (!isNaN(pageNum)) setCurrentPage(pageNum);
           }
@@ -22,9 +27,19 @@ export default function FullPageScroll({ dataobjA, dataobjB }) {
       },
       { threshold: 0.6 }
     );
-    document.querySelectorAll(".snap-section").forEach((s) => observer.observe(s));
+
+    // .snap-section들을 다시 찾아서 관찰
+    const sections = document.querySelectorAll(".snap-section");
+    sections.forEach((s) => observer.observe(s));
+
     return () => observer.disconnect();
-  }, []);
+  }, [totalArr]);
+
+  useEffect(()=>{
+    !isMobile
+    ? setTotalArr([...Array(5)])
+    : setTotalArr([...Array(6)])
+  },[isMobile])
 
   return (
     <main className="relative w-full h-dvh overflow-hidden bg-[#181818] text-white font-sans selection:bg-white selection:text-black">
@@ -37,15 +52,15 @@ export default function FullPageScroll({ dataobjA, dataobjB }) {
       </div>
 
       {/* 측면 페이지 표시 */}
-      <div className="fixed left-[18px] md:left-6 bottom-[20px] md:bottom-auto md:top-1/2 md:-translate-y-1/2 z-60 flex flex-col gap-2 md:gap-4">
-        {[...Array(5)].map((_, i) => (
-          <div key={i} className={`w-1.5 h-1.5 rounded-full transition-all duration-500 ${currentPage === i + 1 ? 'bg-white h6 md:bg-white h-8' : 'bg-white/30'}`} />
+      <div className="fixed left-[18px] md:left-6 bottom-[18px] md:bottom-auto md:top-1/2 md:-translate-y-1/2 z-60 flex flex-col gap-2 md:gap-4">
+        {totalArr.map((_, i) => (
+          <div key={i} className={`w-1.5 h-1.5 rounded-full transition-all duration-500 ${currentPage === i + 1 ? 'bg-white h-6 md:bg-white md:h-8' : 'bg-white/30'}`} />
         ))}
       </div>
 
       {/* 메인 세로 스크롤 컨테이너 */}
       <div ref={containerRef} className="h-dvh overflow-y-auto snap-y snap-mandatory no-scrollbar scroll-auto">
-        {[...Array(5)].map((_, i) => {
+        {totalArr.map((_, i) => {
           const pageIdx = i + 1;
           const isHorizontal = pageIdx === 2 || pageIdx === 3;
 
@@ -64,10 +79,19 @@ export default function FullPageScroll({ dataobjA, dataobjB }) {
                 {pageIdx === 1 && (
                   <SinglePage pageIdx={pageIdx} />
                 )}
-                {pageIdx === 4 && (
-                  <SinglePage pageIdx={pageIdx} />
-                )}
-                {pageIdx === 5 && (
+                {
+                  !isMobile
+                  ? (
+                      (pageIdx === 4 && !isMobile) && <SinglePage pageIdx={pageIdx} type={"All"} />
+                    )
+                  : (
+                      (pageIdx === 4 && isMobile) && <SinglePage pageIdx={pageIdx} type={"HALF1"} />
+                    )
+                }
+                {
+                  isMobile ? (pageIdx === 5 && isMobile) && <SinglePage pageIdx={pageIdx} type={"HALF2"} /> : null
+                }
+                {((pageIdx === 5 && !isMobile) || (pageIdx === 6 && isMobile)) && (
                   <SinglePage pageIdx={pageIdx} />
                 )}
               </section>

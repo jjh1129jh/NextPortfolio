@@ -17,7 +17,6 @@ const ParticleBackground = ({ currentPage }) => { // props 추가
   if (!init) return null;
 
   const isInteractivityEnabled = currentPage === 1;
-  console.log(isInteractivityEnabled)
   return (
     <Particles
       id="tsparticles"
