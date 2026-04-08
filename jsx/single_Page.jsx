@@ -61,7 +61,7 @@ export function PageNum4() { // 4페이지 - 간단한 자기소개 + 기술 스
                                     {group.map((obj, j) => (
                                         <div
                                             key={j}
-                                            className="w-1/4 md:w-full h-20 md:h-30 flex flex-col items-center justify-center gap-1 md:gap-2 rounded-xl p-[2px] border-1 md:border-2 border-transparent"
+                                            className="w-1/4 md:w-full h-17 md:h-30 flex flex-col items-center justify-center gap-1 md:gap-2 rounded-xl p-[2px] border-1 md:border-2 border-transparent"
                                             style={{
                                                 backgroundImage: "linear-gradient(#181818, #181818), radial-gradient(circle at top left, #51a2e9, #ff4d5a)",
                                                 backgroundOrigin: "border-box",
@@ -72,9 +72,9 @@ export function PageNum4() { // 4페이지 - 간단한 자기소개 + 기술 스
                                                 <img className={`${obj.style} mt-3 md:mt-5`} src={`/img/svg_${obj.file}.svg`} alt={obj.name} />
                                             </div>
                                             <div className="w-full h-1/2 flex items-center justify-center">
-                                                <p className="text-[8.5px] md:text-sm font-light md:font-semibold uppercase tracking-wider text-center">
+                                                <p className="text-[8px] md:text-sm font-light md:font-semibold uppercase tracking-wider text-center flex-col items-center">
                                                     {obj.name.split('|').map((index, i) => (
-                                                      <span key={i}>
+                                                      <span key={i} className="leading-[75%]">
                                                         {index}
                                                         {i !== obj.name.split('|').length - 1 && <br />}
                                                       </span>
