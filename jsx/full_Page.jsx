@@ -227,100 +227,117 @@ export function HorizontalSlider({ sliderData, pageIdx, currentSlide, setCurrent
   if (!sliderData || sliderData.length === 0) return null;
 
   return (
-    <div
-      ref={scrollRef}
-      onMouseDown={onDragStart}
-      onMouseMove={onDragMove}
-      onMouseUp={onDragEnd}
-      onMouseLeave={onDragEnd}
-      onTouchStart={onDragStart}
-      onTouchMove={onDragMove}
-      onTouchEnd={onDragEnd}
-      className="w-full h-full flex overflow-x-hidden snap-x snap-mandatory no-scrollbar cursor-grab active:cursor-grabbing select-none relative"
-      style={{ touchAction: 'pan-y' }}
-    >
-      <div className="absolute top-[50px] md:top-[76px] left-1/2 -translate-x-1/2 -translate-y-1/2 z-50">
-        <h2 className="text-xl md:text-4xl whitespace-nowrap relative font-orbitron before:content-[''] before:absolute before:block before:w-full before:h-1/3 before:bg-red-500 before:bottom-0 before:right-[-15px] md:before:right-[-30px] before:-z-10">
-          {pageIdx === 2 ? "Personal Project" : "Commercial Project"}
-        </h2>
-      </div>
+    <>
+<div className="absolute top-[60px] md:top-[76px] left-1/2 -translate-x-1/2 -translate-y-1/2 z-50">
+  <h2 className="text-2xl md:text-4xl whitespace-nowrap relative font-orbitron before:content-[''] before:absolute before:block before:w-[100%] before:max-w-[200px] before:h-1/3 before:bg-red-500 before:bottom-0 before:right-[-30px] before:-z-10">
+    {pageIdx === 2 ? "Personal Project" : "Commercial Project"}
+  </h2>
+</div>
+      <div
+        ref={scrollRef}
+        onMouseDown={onDragStart}
+        onMouseMove={onDragMove}
+        onMouseUp={onDragEnd}
+        onMouseLeave={onDragEnd}
+        onTouchStart={onDragStart}
+        onTouchMove={onDragMove}
+        onTouchEnd={onDragEnd}
+        className="w-full h-full flex overflow-x-hidden snap-x snap-mandatory no-scrollbar cursor-grab active:cursor-grabbing select-none relative"
+        style={{ touchAction: 'pan-y' }}
+      >
 
-      {sliderData.map((item, idx) => (
-        <div 
-          key={item.id || idx} 
-          className={`min-w-full h-full snap-center snap-always flex flex-col items-center justify-center border-x border-white/5 ${bgClass} p-6 md:p-12`}
-        >
+
+        {sliderData.map((item, idx) => (
+          <div
+            key={item.id || idx}
+            className={`min-w-full h-full snap-center snap-always flex flex-col items-center justify-center ${bgClass} p-6 md:p-12`}
+          >
             <div className="w-full h-full animate-fadeIn pointer-events-none">
-            <div className="mx-auto w-full md:w-[90%] h-full pt-[80px] md:pt-[91px] flex flex-col items-center justify-center">
-              
-              <div className="w-full h-[50%] md:h-[65%] flex items-center justify-center">
+              <div className="mx-auto w-full md:w-[90%] h-full pt-[80px] md:pt-[91px] flex flex-col items-center justify-center">
+
+                <div className="w-full h-[50%] md:h-[65%] flex items-end md:items-center justify-center">
                   <div
-                    className={`mx-auto w-full md:w-auto md:h-full aspect-video relative group pointer-events-auto ${isMobile ? 'cursor-pointer' : ''}`}
-                  onMouseEnter={() => { if(!isMobile) timerRef.current = setTimeout(() => setActiveId(item.id), 500); }}
-                  onMouseLeave={() => { if(!isMobile) { clearTimeout(timerRef.current); setActiveId(null); } }}
+                    className={`mx-auto w-full md:w-auto md:h-full aspect-video relative group pointer-events-auto 
+                    ${isMobile ? 'cursor-pointer' : (activeId === item.id ? 'cursor-pointer' : 'cursor-not-allowed')}`}
+                    onMouseEnter={() => {
+                      if (!isMobile) timerRef.current = setTimeout(() => setActiveId(item.id), 500);
+                    }}
+                    onMouseLeave={() => {
+                      if (!isMobile) {
+                        clearTimeout(timerRef.current);
+                        setActiveId(null);
+                      }
+                    }}
                   >
                     <div
-                    className={`w-full h-full bg-gray-800 rounded-[10px] relative transition-all duration-300 ease-out
+                      className={`w-full h-full bg-gray-800 rounded-[10px] relative transition-all duration-300 ease-out
                     ${!isMobile && activeId === item.id ? 'scale-[1.02] shadow-2xl' : 'scale-100 shadow-none'}`}
                       onClick={(e) => {
                         if (isMobile || activeId === item.id) {
-                        if (!isDrag && !isIgnoreClick) router.push(`/portfolio/${item.id}`);
+                          if (!isDrag && !isIgnoreClick) router.push(`/portfolio/${item.id}`);
                         } else {
                           e.preventDefault();
                         }
                       }}
                     >
                       {!isMobile && (
-                      <div
-                      className={`absolute -inset-[2px] md:-inset-[4px] rounded-[12px] z-0 transition-opacity duration-300 
+                        <div
+                          className={`absolute -inset-[2px] md:-inset-[4px] rounded-[12px] z-0 transition-opacity duration-300
                     ${activeId === item.id ? 'opacity-100' : 'opacity-0'}`}
-                        style={{
-                          background: 'linear-gradient(60deg, #5f86f2, #a65ff2, #f25fd0, #f25f61, #f2cb5f, #abf25f, #5ff281, #5ff2f0)',
-                          backgroundSize: '300% 300%',
-                        animation: 'moveGradient 2s linear infinite',
-                        }}
-                      />
+                          style={{
+                            background: 'linear-gradient(60deg, #5f86f2, #a65ff2, #f25fd0, #f25f61, #f2cb5f, #abf25f, #5ff281, #5ff2f0)',
+                            backgroundSize: '300% 300%',
+                            animation: 'moveGradient 2s linear infinite',
+                          }}
+                        />
                       )}
                       <div className="absolute inset-0 bg-[#181818] rounded-[10px] z-10" />
-                    <div className="relative z-20 w-full h-full flex items-center justify-center overflow-hidden rounded-[10px] border border-white/20">
-                      <img className="w-full h-auto rounded-[10px]  pointer-events-none" src={item.MainImages} alt={item.name} />
+                      <div className={`relative z-20 w-full h-full flex items-center justify-center overflow-hidden rounded-[10px] border ${activeId === item.id ? "border-transparent" : "border-white/20"}`}>
+                        {activeId === item.id ? (
+                          <div className={`absolute w-full h-full bg-black/20 z-50 opacity-100 duration-500 flex items-end justify-center animate-fadeIn`}>
+                            <span className="font-orbitron opacity-80 text-2xl mb-10 tracking-wider">VIEW PROJECT</span>
+                          </div>
+                        ) : null}
+                        <img className="w-full h-auto rounded-[10px] pointer-events-none" src={item.MainImages} alt={item.name} />
                       </div>
                     </div>
                   </div>
                 </div>
 
-              <div className="w-full h-[50%] md:h-[35%] flex flex-col items-center justify-start md:justify-center mt-6 md:mt-2">
-                <h4 className="text-xl md:text-3xl font-bold font-orbitron">{item.name}</h4>
-                <p className="text-xs md:text-lg font-light opacity-60 mt-2 md:mt-4 px-4 text-center max-w-[800px] line-clamp-3 md:line-clamp-none leading-relaxed">
-                  {item.contentS}
-                </p>
-                <div className="flex flex-col md:flex-row gap-2 md:gap-4 items-center mt-4 md:mt-8">
-                  <div className="text-[9px] md:text-xs font-mono opacity-40 uppercase tracking-[0.2em]">Key skills</div>
-                  <div className="flex gap-2 md:gap-3">
-                    {item.Language && item.Language.map((langValue) => {
-                      const targetLang = Language.find((l) => l.value === langValue);
-                      if (!targetLang) return null;
-                      return (
-                        <div key={langValue} className="group relative">
-                          <img src={targetLang.src} alt={langValue} className="w-5 h-5 md:w-9 md:h-9 transition-transform duration-300 group-hover:scale-125 object-contain" />
-                        </div>
-                      );
-                    })}
+                <div className="w-full h-[50%] md:h-[35%] flex flex-col items-center justify-start md:justify-center mt-6 md:mt-2">
+                  <h4 className="text-xl md:text-3xl font-bold font-orbitron title-mixed-font">{item.name}</h4>
+                  <p className="text-[15px] md:text-lg font-light opacity-60 mt-2 md:mt-4 px-4 text-center line-clamp-4 md:line-clamp-none leading-relaxed weight-clear-300 md:whitespace-nowrap break-keep">
+                    {item.contentS}
+                  </p>
+                  <div className="flex flex-col md:flex-row gap-2 md:gap-4 items-center mt-4 md:mt-8">
+                    <div className="text-[16px] md:text-xs font-mono opacity-40 uppercase tracking-[2px] md:tracking-[0.2em]">Key skills</div>
+                    <div className="flex gap-2 md:gap-3">
+                      {item.Language && item.Language.map((langValue) => {
+                        const targetLang = Language.find((l) => l.value === langValue);
+                        if (!targetLang) return null;
+                        return (
+                          <div key={langValue} className="group relative">
+                            <img src={targetLang.src} alt={langValue} className="w-5 h-5 md:w-9 md:h-9 transition-transform duration-300 group-hover:scale-125 object-contain" />
+                          </div>
+                        );
+                      })}
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
 
-      <style jsx>{`
+        <style jsx>{`
         @keyframes moveGradient {
           0% { background-position: 0% 50%; }
           50% { background-position: 100% 50%; }
           100% { background-position: 0% 50%; }
         }
       `}</style>
-    </div>
+      </div>
+    </>
+
   );
 }

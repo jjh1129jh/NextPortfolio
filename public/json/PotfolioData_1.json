@@ -31,7 +31,7 @@
     },
     {
         "id": 2,
-        "name": "커피숍",
+        "name": "COFFEE SHOP",
         "nametype": "K",
         "subname": "Coffee Shop",
         "Language": ["scss", "react", "bootstrap", "redux"],
@@ -46,7 +46,7 @@
     },
     {
         "id": 3,
-        "name": "스냅클라우드",
+        "name": "SNAP CLOUD",
         "nametype": "K",
         "subname": "Snap Cloud",
         "Language": ["scss", "react", "bootstrap"],
@@ -121,7 +121,7 @@
     },
     {
         "id": 8,
-        "name": "동방",
+        "name": "DONGBANG",
         "nametype": "K",
         "subname": "Dong Bang",
         "Language": ["scss", "jquery"],
