@@ -71,7 +71,7 @@
         "composition": ["메인페이지"],
         "features": ["풀페이지", "스와이퍼"],
         "MainImages": "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Old_Portfolio.png",
-        "weblink": "https://jjh1129jh.github.io/",
+        "weblink": "https://old-portfolio-beta.vercel.app/",
         "textcolor": "rgb(238, 238, 238)"
     },
     {

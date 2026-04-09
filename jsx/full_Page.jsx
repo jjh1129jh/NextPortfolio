@@ -18,7 +18,7 @@ export default function FullPageScroll({ dataobjA, dataobjB }) {
   const [currentSlide2, setCurrentSlide2] = useState(0); // 2페이지(Personal)
   const [currentSlide3, setCurrentSlide3] = useState(0); // 3페이지(Commercial)
 
-useEffect(() => {
+  useEffect(() => {
     if (totalArr.length === 0) return;
 
     const observer = new IntersectionObserver(
@@ -40,11 +40,11 @@ useEffect(() => {
     return () => observer.disconnect();
   }, [totalArr]);
 
-  useEffect(()=>{
+  useEffect(() => {
     !isMobile
-    ? setTotalArr([...Array(5)])
-    : setTotalArr([...Array(6)])
-  },[isMobile])
+      ? setTotalArr([...Array(5)])
+      : setTotalArr([...Array(6)])
+  }, [isMobile])
 
   return (
     <main className="relative w-full h-dvh overflow-hidden bg-[#181818] text-white font-sans selection:bg-white selection:text-black">
@@ -65,9 +65,8 @@ useEffect(() => {
         {totalArr.map((_, i) => (
           <div
             key={i}
-            className={`w-1.5 h-1.5 rounded-full transition-all duration-500 ${
-              currentPage === i + 1 ? "bg-white h-6 md:h-8" : "bg-white/30"
-            }`}
+            className={`w-1.5 h-1.5 rounded-full transition-all duration-500 ${currentPage === i + 1 ? "bg-white h-6 md:h-8" : "bg-white/30"
+              }`}
           />
         ))}
       </div>
@@ -89,34 +88,37 @@ useEffect(() => {
                 {pageIdx === 1 && (
                   <>
                     <SinglePage pageIdx={pageIdx} />
-                    <div className="absolute bottom-8 2xl:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40 animate-bounceVertical pointer-events-none">
-                      <span className="text-[10px] 2xl:text-[14px] font-mono tracking-[0.3em] uppercase">Scroll Down</span>
-                      <div className="w-[1px] h-6 bg-white/50 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:bg-white after:rotate-45" />
+                    <div className="absolute bottom-8 2xl:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 opacity-40 animate-bounceVertical pointer-events-none">
+                      <span className="text-[10px] 2xl:text-[14px] font-mono tracking-[0.4em] uppercase">Scroll Down</span>
+
+                      <svg width="12" height="30" viewBox="0 0 12 30" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" className="opacity-70">
+                        <path d="M6 0V28 M1 23L6 28L11 23" />
+                      </svg>
                     </div>
                   </>
                 )}
 
                 {/* 2페이지: Personal */}
                 {pageIdx === 2 && (
-                  <HorizontalSlider 
-                    pageIdx={pageIdx} 
-                    sliderData={dataobjA} 
-                    currentSlide={currentSlide2} 
+                  <HorizontalSlider
+                    pageIdx={pageIdx}
+                    sliderData={dataobjA}
+                    currentSlide={currentSlide2}
                     setCurrentSlide={setCurrentSlide2}
-                    isMobile={isMobile} 
+                    isMobile={isMobile}
                   />
                 )}
                 {/* 3페이지: Commercial */}
                 {pageIdx === 3 && (
-                  <HorizontalSlider 
-                    pageIdx={pageIdx} 
-                    sliderData={dataobjB} 
-                    currentSlide={currentSlide3} 
+                  <HorizontalSlider
+                    pageIdx={pageIdx}
+                    sliderData={dataobjB}
+                    currentSlide={currentSlide3}
                     setCurrentSlide={setCurrentSlide3}
-                    isMobile={isMobile} 
+                    isMobile={isMobile}
                   />
                 )}
-                
+
                 {/* 나머지 페이지들 */}
                 {isMobile ? (
                   <>
@@ -142,11 +144,10 @@ useEffect(() => {
           {(currentPage === 2 ? dataobjA : dataobjB).map((_, dotIdx) => (
             <div
               key={dotIdx}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
-                dotIdx === (currentPage === 2 ? currentSlide2 : currentSlide3) 
-                ? 'bg-white w-6 md:w-10' 
-                : 'bg-white/20 w-1.5'
-              }`}
+              className={`h-1.5 rounded-full transition-all duration-300 ${dotIdx === (currentPage === 2 ? currentSlide2 : currentSlide3)
+                  ? 'bg-white w-6 md:w-10'
+                  : 'bg-white/20 w-1.5'
+                }`}
             />
           ))}
         </div>
@@ -222,7 +223,7 @@ export function HorizontalSlider({ sliderData, pageIdx, currentSlide, setCurrent
     const velocity = Math.abs((initialX - endX) / duration);
     const width = scrollRef.current.offsetWidth;
     const currentScroll = scrollRef.current.scrollLeft;
-    
+
     let targetIndex = Math.round(currentScroll / width);
     if (totalDistance > 20 || velocity > 0.2) {
       if (initialX - endX > 0) targetIndex = Math.ceil(currentScroll / width);
@@ -234,15 +235,15 @@ export function HorizontalSlider({ sliderData, pageIdx, currentSlide, setCurrent
     setCurrentSlide(targetIndex);
 
     // 부드러운 이동 실행
-    scrollRef.current.scrollTo({ 
-      left: targetIndex * width, 
-      behavior: "smooth" 
+    scrollRef.current.scrollTo({
+      left: targetIndex * width,
+      behavior: "smooth"
     });
 
     // 이동 완료 후 스냅 재활성화 (걸림 현상 해결 핵심)
     setTimeout(() => {
       if (scrollRef.current) {
-    scrollRef.current.style.scrollSnapType = "x mandatory";
+        scrollRef.current.style.scrollSnapType = "x mandatory";
       }
     }, 400);
   };
@@ -251,15 +252,15 @@ export function HorizontalSlider({ sliderData, pageIdx, currentSlide, setCurrent
 
   return (
     <>
-<div className="absolute top-[60px] md:top-[76px] left-1/2 -translate-x-1/2 -translate-y-1/2 z-50">
-  <h2 className="text-2xl md:text-4xl whitespace-nowrap relative font-orbitron before:content-[''] before:absolute before:block before:w-[100%] before:max-w-[200px] before:h-1/3 before:bg-red-500 before:bottom-0 before:right-[-24px] before:-z-10">
-    {pageIdx === 2 ? "Personal Project" : "Commercial Project"}
-  </h2>
-</div>
+      <div className="absolute top-[60px] md:top-[76px] left-1/2 -translate-x-1/2 -translate-y-1/2 z-50">
+        <h2 className="text-2xl md:text-4xl whitespace-nowrap relative font-orbitron before:content-[''] before:absolute before:block before:w-[100%] before:max-w-[200px] before:h-1/3 before:bg-red-500 before:bottom-0 before:right-[-24px] before:-z-10">
+          {pageIdx === 2 ? "Personal Project" : "Commercial Project"}
+        </h2>
+      </div>
 
       {/* 가로 슬라이드 안내 문구 (첫 번째 슬라이드에서만 표시) */}
       {currentSlide === 0 && (
-        <div className="absolute bottom-[80px] md:bottom-[100px] left-1/2 -translate-x-1/2 md:-translate-0 md:left-auto md:right-[120px] z-[60] flex items-center gap-3 opacity-40 pointer-events-none">
+        <div className="absolute bottom-[80px] 2xl:bottom-[100px] left-1/2 -translate-x-1/2 md:-translate-0 md:left-auto md:right-[120px] z-[60] flex items-center gap-3 text-[#2ac2de] opacity-65 pointer-events-none">
           <span className="text-[10px] md:text-[14px] font-orbitron tracking-[0.2em] uppercase">Slide Projects</span>
           <span className="text-lg md:text-xl animate-bounceHorizontal">→</span>
         </div>
@@ -285,9 +286,10 @@ export function HorizontalSlider({ sliderData, pageIdx, currentSlide, setCurrent
             className={`min-w-full h-full snap-center snap-always flex flex-col items-center justify-center ${bgClass} p-6 md:p-12`}
           >
             <div className="w-full h-full animate-fadeIn pointer-events-none">
-              <div className="mx-auto w-full md:w-[90%] h-full pt-[80px] md:pt-[91px] flex flex-col items-center justify-center">
+              <div className="mx-auto w-full md:w-[90%] h-full pt-[80px] md:pt-[110px] flex flex-col items-center justify-center">
 
-                <div className="w-full h-[50%] md:h-[65%] flex items-end md:items-center justify-center">
+                <div className="w-full h-[50%] md:h-[65%] flex flex-col items-center justify-end md:justify-center">
+                  <p className="w-full text-[11px] md:text-[13px] 2xl:text-[14px] text-white text-center weight-clear-300 opacity-40 mb-3">이미지를 클릭하면 상세페이지로 이동합니다.</p>
                   <div
                     className={`mx-auto w-full md:w-auto md:h-full aspect-video relative group pointer-events-auto 
                     ${isMobile ? 'cursor-pointer' : (activeId === item.id ? 'cursor-pointer' : 'cursor-not-allowed')}`}
@@ -362,7 +364,7 @@ export function HorizontalSlider({ sliderData, pageIdx, currentSlide, setCurrent
         ))}
       </div>
 
-        <style jsx>{`
+      <style jsx>{`
         @keyframes moveGradient {
           0% { background-position: 0% 50%; }
           50% { background-position: 100% 50%; }
