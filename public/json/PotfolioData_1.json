@@ -11,7 +11,6 @@
         "composition": ["메인페이지", "서브페이지(Nav전체, 상품페이지)"],
         "features": ["풀페이지(홈)", "Axios", "정렬 및 분류", "CART", "쿠폰적용"],
         "MainImages": "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/MoviePage.png",
-        "logo": "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/MoviePage_logo.png",
         "weblink": "https://jjh1129jh.github.io/CoffeeShop/",
         "textcolor": "rgb(238, 238, 238)"
     },
@@ -27,7 +26,6 @@
         "composition": ["메인페이지", "서브페이지(Nav전체, 상품페이지)"],
         "features": ["풀페이지(홈)", "Axios", "정렬 및 분류", "CART", "쿠폰적용"],
         "MainImages": "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/New_Portfolio.png",
-        "logo": "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/New_Portfolio_logo.png",
         "weblink": "https://jjh1129jh.github.io/CoffeeShop/",
         "textcolor": "rgb(238, 238, 238)"
     },
@@ -43,7 +41,6 @@
         "composition": ["메인페이지", "서브페이지(Nav전체, 상품페이지)"],
         "features": ["풀페이지(홈)", "Axios", "정렬 및 분류", "CART", "쿠폰적용"],
         "MainImages": "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/CoffeeShop.png",
-        "logo": "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/CoffeeShop_logo.png",
         "weblink": "https://jjh1129jh.github.io/CoffeeShop/",
         "textcolor": "rgb(238, 238, 238)"
     },
@@ -59,7 +56,6 @@
         "composition": ["메인페이지", "팝업페이지"],
         "features": ["글 업로드 및 삭제", "댓글 작성 및 삭제", "인기포스트 표시"],
         "MainImages": "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/SnapCloud.png",
-        "logo": "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/SnapCloud_logo.png",
         "weblink": "https://jjh1129jh.github.io/SnapCloud/",
         "textcolor": "rgb(238, 238, 238)"
     },
@@ -75,7 +71,6 @@
         "composition": ["메인페이지"],
         "features": ["풀페이지", "스와이퍼"],
         "MainImages": "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Old_Portfolio.png",
-        "logo": "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Old_Portfolio_logo.png",
         "weblink": "https://jjh1129jh.github.io/",
         "textcolor": "rgb(238, 238, 238)"
     },
@@ -91,7 +86,6 @@
         "composition": ["메인페이지"],
         "features": ["풀페이지", "오브젝트 애니메이션"],
         "MainImages": "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/KFC.png",
-        "logo": "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/KFC_logo.png",
         "weblink": "https://jhkfc.vercel.app/",
         "textcolor": "rgb(238, 238, 238)"
     },
@@ -107,7 +101,6 @@
         "composition": ["메인페이지", "서브페이지(TOUR, HOTEL, FOOD)"],
         "features": ["Auto 슬라이드", "스와이퍼", "API 연동(구글맵스, 이미지뷰어)"],
         "MainImages": "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/YILAN.png",
-        "logo": "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/YILAN_logo.png",
         "weblink": "https://jhyilan.vercel.app/",
         "textcolor": "rgb(238, 238, 238)"
     },
@@ -123,7 +116,6 @@
         "composition": ["메인페이지", "서브페이지(LOGIN)"],
         "features": ["Auto 슬라이드"],
         "MainImages": "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/NIKON.png",
-        "logo": "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/NIKON_logo.png",
         "weblink": "https://jhnikon.vercel.app/",
         "textcolor": "#4b4b4b"
     },
@@ -139,7 +131,6 @@
         "composition": ["메인페이지", "서브페이지(LOGIN, JOIN)"],
         "features": ["-"],
         "MainImages": "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/DONGBANG.png",
-        "logo": "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/DONGBANG_logo.png",
         "weblink": "https://jhdongbang.vercel.app/",
         "textcolor": "hsla(0, 0%, 93%, 1.00)"
     }

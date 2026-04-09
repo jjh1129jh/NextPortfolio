@@ -3,11 +3,19 @@ import { dataobj1, dataobj2 } from "../../../page"
 import ParticleBackground from "../../../../jsx/particle_Bg";
 
 export async function getData(id) {
-    const response = await fetch(dataobj1, { cache: 'no-store' });
-    const data = await response.json()
-    const dataArr = [...data]
-    const item = dataArr.find((item) => item.id === Number(id));
-    return item
+    const res1 = await fetch(dataobj1, { cache: 'no-store' });
+    const res2 = await fetch(dataobj2, { cache: 'no-store' });
+    
+    const data1 = await res1.json();
+    const data2 = await res2.json();
+
+    // 2. 두 배열을 하나로 합칩니다.
+    const allData = [...data1, ...data2];
+
+    // 3. 합쳐진 전체 데이터에서 id가 일치하는 항목을 찾습니다.
+    const item = allData.find((item) => item.id === Number(id));
+    
+    return item;
 }
 
 

@@ -4,6 +4,7 @@ export const Language = [
   { value: "react", src:"/img/svg_react.svg" },
   { value: "next.js", src:"/img/svg_next2.svg" },
   { value: "rest.api", src:"/img/svg_rest.svg" },
+  { value: "css", src:"/img/svg_css.svg" },
   { value: "scss", src:"/img/svg_scss.svg" },
   { value: "bootstrap", src:"/img/svg_bootstrap.svg" },
   { value: "redux", src:"/img/svg_redux.svg" },

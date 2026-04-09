@@ -30,10 +30,10 @@ export function PageNum4({type}) { // 4페이지 - 간단한 자기소개 + 기�
     return(
         <div className={`w-full h-full p-4 md:p-12 relative`}>
             {
-                (type === "All" || type === "HALF1") && <div className="absolute top-[60px] md:top-[76px] left-1/2 -translate-x-1/2 -translate-y-1/2"><h2 className="text-3xl md:text-4xl whitespace-nowrap relative before:content-[''] before:absolute before:block before:w-full before:h-1/3 before:bg-red-500 before:bottom-0 before:right-[-30px] before:-z-10">About</h2></div>
+                (type === "All" || type === "HALF1") && <div className="absolute top-[60px] md:top-[76px] left-1/2 -translate-x-1/2 -translate-y-1/2"><h2 className="text-3xl md:text-4xl whitespace-nowrap relative before:content-[''] before:absolute before:block before:w-full before:h-1/3 before:bg-red-500 before:bottom-0 before:right-[-30px] before:-z-10 font-orbitron">About</h2></div>
             }
             {
-                type === "HALF2" && <div className="absolute top-[60px] md:top-[76px] left-1/2 -translate-x-1/2 -translate-y-1/2"><h2 className="text-3xl md:text-4xl whitespace-nowrap relative before:content-[''] before:absolute before:block before:w-full before:h-1/3 before:bg-red-500 before:bottom-0 before:right-[-30px] before:-z-10">Ability</h2></div>
+                type === "HALF2" && <div className="absolute top-[60px] md:top-[76px] left-1/2 -translate-x-1/2 -translate-y-1/2"><h2 className="text-3xl md:text-4xl whitespace-nowrap relative before:content-[''] before:absolute before:block before:w-full before:h-1/3 before:bg-red-500 before:bottom-0 before:right-[-30px] before:-z-10 font-orbitron">Ability</h2></div>
             }
             
             <div className="w-full md:w-[1500px] h-full mx-auto animate-fadeIn flex flex-col md:flex-row justify-center md:justify-between gap-6 md:gap-0">
@@ -148,7 +148,7 @@ export function PageNum5({pageIdx}) { // 5페이지 - 인적사항 + Footer
 
     return (
         <div className={`w-full h-full flex flex-col items-center flex-1 text-center relative`}>
-            <div className="absolute top-[60px] md:top-[76px] left-1/2 -translate-x-1/2 -translate-y-1/2"><h2 className="text-3xl md:text-4xl whitespace-nowrap relative before:content-[''] before:absolute before:block before:w-full before:h-1/3 before:bg-red-500 before:bottom-0 before:right-[-30px] before:-z-10">Career</h2></div>
+            <div className="absolute top-[60px] md:top-[76px] left-1/2 -translate-x-1/2 -translate-y-1/2"><h2 className="text-3xl md:text-4xl whitespace-nowrap relative before:content-[''] before:absolute before:block before:w-full before:h-1/3 before:bg-red-500 before:bottom-0 before:right-[-30px] before:-z-10 font-orbitron">Career</h2></div>
             <div className="w-full flex-1 mt-20 mb-4 md:mt-36 md:mb-14 animate-fadeIn p-4 flex items-center md:justify-center">
                 <div className="w-full md:w-[90%] h-full max-h-[500px] md:max-h-none flex flex-col md:flex-row gap-4 md:gap-0 relative">
                     <div className="hidden md:absolute top-0 left-0 right-0 w-full h-[3px] bg-gradient-to-r from-[#51a2e980] to-[#ff4d5a80] hidden md:block" />

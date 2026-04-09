@@ -1,8 +1,19 @@
 @import "tailwindcss";
 
+/* 1. 구글 폰트 로딩 */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+/* 2. Tailwind v4 방식의 테마 변수 등록 */
+@theme {
+  --font-orbitron: "Orbitron", sans-serif;
+  --color-check-red: #ff0000; /* 테스트용 색상 */
+}
+
 body {
   /* background-color: #141414; */
   /* color: white; */
+  /* 기본 폰트를 Orbitron으로 쓰고 싶다면 아래 주석 해제 */
+  /* font-family: var(--font-orbitron); */
 }
 
 a {
