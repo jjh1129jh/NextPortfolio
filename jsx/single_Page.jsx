@@ -142,64 +142,70 @@ export function PageNum5({pageIdx}) { // 5페이지 - 인적사항 + Footer
       maskComposite: 'exclude',
       background: 'radial-gradient(circle at top left, rgba(81, 162, 233, 0.7), rgba(255, 77, 90, 0.7))'
     };
+    function Br() {
+        return(<><br className="hidden md:inline-block"/><span className="md:hidden"> - </span></>)
+    }
+
     return (
         <div className={`w-full h-full flex flex-col items-center flex-1 text-center relative`}>
             <div className="absolute top-[60px] md:top-[100px] left-1/2 -translate-x-1/2 -translate-y-1/2"><h2 className="text-3xl md:text-4xl whitespace-nowrap relative before:content-[''] before:absolute before:block before:w-full before:h-1/3 before:bg-red-500 before:bottom-0 before:right-[-30px] before:-z-10">Career</h2></div>
-            <div className="w-full flex-1 md:mt-30 animate-fadeIn px-4 pt-33 pb-17 flex content-end md:justify-center">
-                <div className="w-full md:w-[90%] grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-4">
+            <div className="w-full flex-1 mt-20 mb-4 md:mt-34 animate-fadeIn p-4 flex items-center md:justify-center">
+                <div className="w-full md:w-[90%] h-full max-h-[500px] md:max-h-none flex flex-col md:flex-row gap-4">
 
-                    {/* PROFILE */}
-                    <div className="w-full h-full relative p-2 text-white rounded-lg flex flex-col items-center justify-start">
-                        <div
-                            className="absolute inset-0 rounded-lg"
-                            style={maskBorderStyle}
-                        />
-                        <h4 className="text-3xl relative z-10 font-bold mt-4">PROFILE</h4>
-                        <div className="flex-1 flex items-center justify-center">
-                            <ul>
-                                <li className="text-[12px] py-1 whitespace-nowrap">정지환</li>
-                                <li className="text-[12px] py-1 whitespace-nowrap">인천 서구</li>
-                                <li className="text-[12px] py-1 whitespace-nowrap">1996.11.29</li>
-                                <li className="text-[12px] py-1 whitespace-nowrap">멀티미디어학 졸업</li>
-                                <li className="text-[12px] py-1 whitespace-nowrap">TIS정보기술교육센터 수료</li>
-                            </ul>
+                    <div className="flex md:flex-col justify-between w-full h-1/2 md:h-full md:w-1/2 gap-4 md:gap-0">
+                        {/* PROFILE */}
+                        <div className="w-full h-full relative p-2 pb-4 text-white rounded-lg flex flex-col items-center justify-start">
+                            <div
+                                className="absolute inset-0 rounded-lg"
+                                style={maskBorderStyle}
+                            />
+                            <h4 className="text-[18px] relative z-10 font-bold mt-2">PROFILE</h4>
+                            <div className="flex-1 flex items-center justify-center">
+                                <ul>
+                                    <li className="text-[12px] py-[3px] whitespace-nowrap">정지환</li>
+                                    <li className="text-[12px] py-[3px] whitespace-nowrap">인천 서구</li>
+                                    <li className="text-[12px] py-[3px] whitespace-nowrap">1996.11.29</li>
+                                    <li className="text-[12px] py-[3px] whitespace-nowrap">멀티미디어학 졸업</li>
+                                    <li className="text-[12px] py-[3px] whitespace-nowrap">TIS정보기술교육센터</li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
 
-                    {/* LICENSE */}
-                    <div className="w-full h-full relative p-2 text-white rounded-lg md:row-start-2 md:col-start-1 flex flex-col items-center justify-start">
-                        <div
-                            className="absolute inset-0 rounded-lg"
-                            style={maskBorderStyle}
-                        />
-                        <h4 className="text-3xl relative z-10 font-bold mt-4">LICENSE</h4>
-                        <div className="flex-1 flex items-center justify-center">
-                            <ul>
-                                <li className="text-[12px] py-1 whitespace-nowrap">정보처리산업기사</li>
-                                <li className="text-[12px] py-1 whitespace-nowrap">웹디자인기능사</li>
-                                <li className="text-[12px] py-1 whitespace-nowrap">컴퓨터그래픽스기능사</li>
-                                <li className="text-[12px] py-1 whitespace-nowrap">사무자동화산업기사</li>
-                            </ul>
+                        {/* LICENSE */}
+                        <div className="w-full h-full relative p-2 pb-4 text-white rounded-lg flex flex-col items-center justify-start">
+                            <div
+                                className="absolute inset-0 rounded-lg"
+                                style={maskBorderStyle}
+                            />
+                            <h4 className="text-[18px] relative z-10 font-bold mt-2">LICENSE</h4>
+                            <div className="flex-1 flex items-center justify-center">
+                                <ul>
+                                    <li className="text-[12px] py-[3px] whitespace-nowrap">정보처리산업기사</li>
+                                    <li className="text-[12px] py-[3px] whitespace-nowrap">웹디자인기능사</li>
+                                    <li className="text-[12px] py-[3px] whitespace-nowrap">컴퓨터그래픽스기능사</li>
+                                    <li className="text-[12px] py-[3px] whitespace-nowrap">사무자동화산업기사</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
                     {/* CAREER */}
-                    {/* <div className="w-full h-full relative p-2 text-white rounded-lg col-span-2 md:col-span-2 md:row-span-2 md:col-start-2 md:row-start-1 flex flex-col items-center justify-start">
+                    <div className="w-full md:w-1/2 h-1/2 md:h-full relative p-2 pb-4 text-white rounded-lg flex flex-col items-center justify-start">
                         <div
                             className="absolute inset-0 rounded-lg"
                             style={maskBorderStyle}
                         />
-                        <h4 className="text-3xl relative z-10 font-bold mt-4">CAREER</h4>
+                        <h4 className="text-[18px] relative z-10 font-bold mt-2">CAREER</h4>
                         <div className="flex-1 flex items-center justify-center">
                             <ul>
-                                <li className="text-[12px] py-2 whitespace-nowrap">미림미디어랩<br/>(2022.06 ~ 2023.09)</li>
-                                <li className="text-[12px] py-2 whitespace-nowrap">미림미디어랩 ( 외주 )<br/>(2023.10 ~ 2023.12)</li>
-                                <li className="text-[12px] py-2 whitespace-nowrap">다락컴퍼니<br/>(2024.02 ~ 2025.04)</li>
-                                <li className="text-[12px] py-2 whitespace-nowrap">비즈엠디지 ( 외주 )<br/>(2025.06 ~ 2025.10)</li>
-                                <li className="text-[12px] py-2 whitespace-nowrap">리얼스터디 ( 3개월 계약직 + α )<br/>(2025.10 ~ 2026.02)</li>
+                                <li className="text-[12px] py-[5px] whitespace-nowrap">미림미디어랩<Br/>(2022.06 ~ 2023.09)</li>
+                                <li className="text-[12px] py-[5px] whitespace-nowrap">미림미디어랩 ( 외주 )<Br/>(2023.10 ~ 2023.12)</li>
+                                <li className="text-[12px] py-[5px] whitespace-nowrap">다락컴퍼니<Br/>(2024.02 ~ 2025.04)</li>
+                                <li className="text-[12px] py-[5px] whitespace-nowrap">비즈엠디지 ( 외주 )<Br/>(2025.06 ~ 2025.10)</li>
+                                <li className="text-[12px] py-[5px] whitespace-nowrap">리얼스터디 ( 3개월 계약직 + α )<Br/>(2025.10 ~ 2026.02)</li>
                             </ul>
                         </div>
-                    </div> */}
+                    </div>
 
                 </div>
 
