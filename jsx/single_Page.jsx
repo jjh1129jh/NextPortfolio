@@ -192,11 +192,11 @@ export function PageNum5({pageIdx}) { // 5페이지 - 인적사항 + Footer
                         <h4 className="text-3xl relative z-10 font-bold mt-4">CAREER</h4>
                         <div className="flex-1 flex items-center justify-center">
                             <ul>
-                                <li className="text-[12px] py-1 whitespace-nowrap">미림미디어랩<br/>(2022.06 ~ 2023.09)</li>
-                                <li className="text-[12px] py-1 whitespace-nowrap">미림미디어랩 ( 외주 )<br/>(2023.10 ~ 2023.12)</li>
-                                <li className="text-[12px] py-1 whitespace-nowrap">다락컴퍼니<br/>(2024.02 ~ 2025.04)</li>
-                                <li className="text-[12px] py-1 whitespace-nowrap">비즈엠디지 ( 외주 )<br/>(2025.06 ~ 2025.10)</li>
-                                <li className="text-[12px] py-1 whitespace-nowrap">리얼스터디 ( 3개월 계약직 + α )<br/>(2025.10 ~ 2026.02)</li>
+                                <li className="text-[12px] py-2 whitespace-nowrap">미림미디어랩<br/>(2022.06 ~ 2023.09)</li>
+                                <li className="text-[12px] py-2 whitespace-nowrap">미림미디어랩 ( 외주 )<br/>(2023.10 ~ 2023.12)</li>
+                                <li className="text-[12px] py-2 whitespace-nowrap">다락컴퍼니<br/>(2024.02 ~ 2025.04)</li>
+                                <li className="text-[12px] py-2 whitespace-nowrap">비즈엠디지 ( 외주 )<br/>(2025.06 ~ 2025.10)</li>
+                                <li className="text-[12px] py-2 whitespace-nowrap">리얼스터디 ( 3개월 계약직 + α )<br/>(2025.10 ~ 2026.02)</li>
                             </ul>
                         </div>
                     </div>
