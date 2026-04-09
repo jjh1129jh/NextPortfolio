@@ -188,6 +188,11 @@ export function HorizontalSlider({ dataobjA, dataobjB, pageIdx, bgClass }) {
     router.push(`/portfolio/${id}`);
   };
 
+  function PopupLink(e) {
+  // 세 번째 인자(옵션)를 완전히 비우면 브라우저가 새 탭으로 엽니다.
+  window.open(e, "_blank");
+}
+
   return (
     <div
       ref={scrollRef}
@@ -208,6 +213,9 @@ export function HorizontalSlider({ dataobjA, dataobjB, pageIdx, bgClass }) {
             <h2 className="text-5xl md:text-7xl font-black mb-2 tracking-tighter uppercase leading-none">SECTION {pageIdx}</h2>
             <p className="pointer-events-auto cursor-pointer" onClick={() => { portFolioLink(item.id) }}>{item.id}</p>
             <p className="text-xl md:text-2xl font-light opacity-60">{item.content}</p>
+            <a onClick={ 
+              ()=>{PopupLink(item.weblink)}
+              } className="text-xl md:text-2xl font-light opacity-60 pointer-events-auto">{item.weblink}</a>
             <div className="mt-8 flex gap-2 justify-center">
               {sliderData.map((_, dot) => (
                 <div key={dot} className={`w-2 h-2 rounded-full transition-all duration-300 ${dot === id ? 'bg-white w-8' : 'bg-white/20'}`} />

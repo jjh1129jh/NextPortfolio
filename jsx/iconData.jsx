@@ -19,7 +19,7 @@ export const iconDataPC = [
     { file : "tailwind", name : "TAILWIND", style : "w-auto max-h-full" },
     
     { file : "rest", name : "REST.API", style : "w-auto max-h-full scale-[80%]" },
-    { file : "git", name : "GIT", style : "w-auto max-h-full scale-[110%]" },
+    { file : "git", name : "GIT HUB", style : "w-auto max-h-full scale-[110%]" },
 ]
 
 export const iconDataM = [
@@ -42,6 +42,6 @@ export const iconDataM = [
     { file : "redux", name : "REDUX", style : "w-auto max-h-full" },
 
     { file : "bootstrap", name : "BOOTSTRAP", style : "w-auto max-h-full scale-[80%]" },
-    { file : "git", name : "GIT", style : "w-auto max-h-full scale-[110%]" },
+    { file : "git", name : "GIT HUB", style : "w-auto max-h-full scale-[110%]" },
     { file : "rest", name : "REST.API", style : "w-auto max-h-full scale-[80%]" },
 ]

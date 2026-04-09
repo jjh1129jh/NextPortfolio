@@ -46,7 +46,7 @@
         "imagesPC": "/img/KFC/KFCfull.jpg",
         "imagesTB": "/img/KFC/ipad.png",
         "imagesMB": "/img/KFC/mobile.png",
-        "weblink": "https://jjh1129jh.github.io/kfc/",
+        "weblink": "https://jhkfc.vercel.app/",
         "bgcolor": "#9c1621",
         "textcolor": "rgb(238, 238, 238)"
     },
@@ -63,7 +63,7 @@
         "imagesPC": "/img/YILAN/pc.png",
         "imagesTB": "/img/YILAN/IPAD.png",
         "imagesMB": "/img/YILAN/mobile.png",
-        "weblink": "https://jjh1129jh.github.io/yilan/",
+        "weblink": "https://jhyilan.vercel.app/",
         "bgcolor": "#576954",
         "textcolor": "rgb(238, 238, 238)"
     },
@@ -80,7 +80,7 @@
         "imagesPC": "/img/NIKON/Pc.png",
         "imagesTB": "",
         "imagesMB": "/img/NIKON/Mobile.png",
-        "weblink": "https://jjh1129jh.github.io/nikon/",
+        "weblink": "https://jhnikon.vercel.app/",
         "bgcolor": "#353535",
         "textcolor": "#4b4b4b"
     },
@@ -97,7 +97,7 @@
         "imagesPC": "/img/DONGBANG/Pc.png",
         "imagesTB": "",
         "imagesMB": "",
-        "weblink": "https://jjh1129jh.github.io/dongbang/",
+        "weblink": "https://jhdongbang.vercel.app/",
         "bgcolor": "#131538",
         "textcolor": "hsla(0, 0%, 93%, 1.00)"
     },
@@ -114,7 +114,7 @@
         "imagesPC": "/img/PORTFOLIO/Pc.png",
         "imagesTB": "/img/PORTFOLIO/Tb.png",
         "imagesMB": "/img/PORTFOLIO/Mb.png",
-        "weblink": "",
+        "weblink": "https://jjh1129jh.github.io/",
         "bgcolor": "#adadad",
         "textcolor": "rgb(238, 238, 238)"
     }
