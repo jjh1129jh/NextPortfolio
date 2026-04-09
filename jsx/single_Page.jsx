@@ -19,7 +19,7 @@ export function PageNum1() { // 1페이지 - 배너페이지
     return(
         <div className={`w-full h-full flex flex-col items-center justify-center text-center p-4 md:p-12`}>
             <div className="animate-fadeIn">
-              <h2 className="text-4xl md:text-7xl tracking-[4px] uppercase leading-[110%] md:leading-[100%] title-mixed-font !font-black">Hello, I’m <br className="md:hidden"/><span className="text-[#ff4d5a]">JIHWAN JEONG</span>.</h2>
+              <h2 className="text-[30px] md:text-7xl tracking-[4px] uppercase leading-[110%] md:leading-[100%] title-mixed-font !font-black">Hello, I’m <br className="md:hidden"/><span className="text-[#ff4d5a]">JIHWAN JEONG</span>.</h2>
               <p className="mt-4 opacity-70 tracking-widest uppercase text-[18px] md:text-2xl weight-clear-300">I’m a publisher<br className="md:hidden"/> & Front-end Engineer.</p>
             </div>
         </div>
@@ -36,7 +36,7 @@ export function PageNum4({type}) { // 4페이지 - 간단한 자기소개 + 기�
                 type === "HALF2" && <div className="absolute top-[60px] md:top-[76px] left-1/2 -translate-x-1/2 -translate-y-1/2"><h2 className="text-2xl md:text-4xl whitespace-nowrap relative before:content-[''] before:absolute before:block before:w-[100%] before:max-w-[200px] before:h-1/3 before:bg-red-500 before:bottom-0 before:right-[-20px] before:-z-10 font-orbitron">Ability</h2></div>
             }
             
-            <div className="w-full md:w-[1500px] h-full mx-auto animate-fadeIn flex flex-col md:flex-row justify-center md:justify-between gap-6 md:gap-0">
+            <div className="w-full md:w-[90%] 2xl:w-[1500px] h-full mx-auto animate-fadeIn flex flex-col md:flex-row justify-center md:justify-between gap-6 md:gap-0">
                 {
                     type === "All" && (<><PageNum4Top/><PageNum4Bottom/></>)
                 }
@@ -63,7 +63,7 @@ export function PageNum4Top() {
     return (
         <div className="w-full md:w-[50%] flex flex-col items-center justify-center gap-6 md:gap-8">
             <img className="w-40 md:w-80" src="/img/developer.png" alt="개발자 캐릭터" />
-            <p className="w-[90%] md:w-fit text-[16px] md:text-[18px] leading-[1.8] break-keep text-center md:text-left weight-clear-300">
+            <p className="w-[90%] md:w-fit text-[14px] md:text-[16px] 2xl:text-[18px] leading-[1.8] break-keep text-center md:text-left weight-clear-300">
                 안녕하세요! 저는 "개발은 멈추지 않는 평생교육이다." 라는 철학을 바탕으로,<Br/>급변하는 기술 트렌드 속에서도 끊임없이 학습하며 나아가는 개발자입니다.<Br/>탄탄한 웹 퍼블리싱 역량을 통해 디테일이 살아있는 UI를 구현하며,<Br/>이를 프론트엔드 기술과 접목해 사용자 중심의 역동적인 웹 환경을 구축합니다.<Br/>어제보다 더 나은 코드와 기술력으로 완성도 높은 결과물을 만들어내겠습니다.
             </p>
         </div>
@@ -90,17 +90,17 @@ export function PageNum4Bottom() {
 
     return(
         <div className="w-full md:w-[50%] flex items-center justify-center">
-            <div className="w-[90%] md:w-auto flex flex-col md:flex-row justify-center gap-2 md:gap-5">
+            <div className="w-[90%] md:w-auto flex flex-col md:flex-row justify-center gap-2 md:gap-3 2xl:gap-5">
                 {
                     groupSizes.map((index, i) =>{
                         const group = iconData.slice(currentIndex, currentIndex + index);
                         currentIndex += index;
                         return (
-                            <div key={i} className="w-full md:w-30 flex md:flex-col justify-center gap-2 md:gap-5">
+                            <div key={i} className="w-full md:w-24 2xl:w-30 flex md:flex-col justify-center gap-2 md:gap-3 2xl:gap-5">
                             {group.map((obj, j) => (
                                 <div
                                     key={j}
-                                    className="w-1/4 md:w-full h-17 md:h-30 flex flex-col items-center justify-center gap-1 md:gap-2 rounded-xl p-[2px] border-1 md:border-2 border-transparent"
+                                    className="w-1/4 md:w-full h-17 md:h-24 2xl:h-30 flex flex-col items-center justify-center gap-1 md:gap-2 rounded-xl p-[2px] border-1 2xl:border-2 border-transparent"
                                     style={{
                                         backgroundImage: "linear-gradient(#181818, #181818), radial-gradient(circle at top left, #51a2e9, #ff4d5a)",
                                         backgroundOrigin: "border-box",
@@ -111,7 +111,7 @@ export function PageNum4Bottom() {
                                         <img className={`${obj.style} mt-3 md:mt-5`} src={`/img/svg_${obj.file}.svg`} alt={obj.name} />
                                     </div>
                                     <div className="w-full h-1/2 flex items-center justify-center">
-                                        <p className="text-[8px] md:text-sm font-light md:font-semibold uppercase tracking-wider text-center flex-col items-center">
+                                        <p className="text-[8px] md:text-[10px] 2xl:text-sm font-light md:font-semibold uppercase tracking-wider text-center flex-col items-center" style={{ fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif', fontWeight: '400' }}>
                                             {obj.name.split('|').map((index, i) => (
                                               <span key={i} className="leading-[75%]">
                                                 {index}
@@ -157,19 +157,19 @@ export function PageNum5({pageIdx}) { // 5페이지 - 인적사항 + Footer
                     <div className="flex md:flex-col justify-between w-full h-1/2 md:h-full md:w-1/2 gap-4 md:gap-0">
                         
                         {/* PROFILE */}
-                        <div className="w-full h-full relative p-2 pb-4 md:p-0 md:pb-0 text-white rounded-lg flex flex-col items-center justify-start md:gap-4">
+                        <div className="w-full h-full relative p-2 pb-4 md:p-0 md:pb-4 2xl:pb-0 text-white rounded-lg flex flex-col items-center justify-start md:gap-2 2xl:gap-4">
                             <div
                                 className="absolute inset-0 rounded-lg md:hidden"
                                 style={maskBorderStyle}
                             />
-                            <h4 className="text-[18px] md:text-[26px] relative z-10 font-bold mt-2 md:mt-7 text-[#ff4d5a] title-mixed-font">PROFILE</h4>
+                            <h4 className="text-[18px] md:text-[26px] relative z-10 font-bold mt-2 md:mt-3 2xl:mt-7 text-[#ff4d5a] title-mixed-font">PROFILE</h4>
                             <div className="flex-1 flex items-center md:items-start justify-center">
-                                <ul className="w-full h-full flex flex-col justify-between py-4 md:py-0 md:pb-7">
-                                    <li className="text-[12px] md:text-[18px] whitespace-nowrap weight-clear-300">정지환</li>
-                                    <li className="text-[12px] md:text-[18px] whitespace-nowrap weight-clear-300">인천 서구</li>
-                                    <li className="text-[12px] md:text-[18px] whitespace-nowrap weight-clear-300">1996.11.29</li>
-                                    <li className="text-[12px] md:text-[18px] whitespace-nowrap weight-clear-300">멀티미디어학 졸업</li>
-                                    <li className="text-[12px] md:text-[18px] whitespace-nowrap weight-clear-300">TIS정보기술교육센터</li>
+                                <ul className="w-full h-full flex flex-col justify-between py-4 md:py-0 2xl:pb-7">
+                                    <li className="max-[350px]:text-[11px] text-[12px] md:text-[14px] 2xl:text-[18px] whitespace-nowrap weight-clear-300">정지환</li>
+                                    <li className="max-[350px]:text-[11px] text-[12px] md:text-[14px] 2xl:text-[18px] whitespace-nowrap weight-clear-300">인천 서구</li>
+                                    <li className="max-[350px]:text-[11px] text-[12px] md:text-[14px] 2xl:text-[18px] whitespace-nowrap weight-clear-300">1996.11.29</li>
+                                    <li className="max-[350px]:text-[11px] text-[12px] md:text-[14px] 2xl:text-[18px] whitespace-nowrap weight-clear-300">멀티미디어학 졸업</li>
+                                    <li className="max-[350px]:text-[11px] text-[12px] md:text-[14px] 2xl:text-[18px] whitespace-nowrap weight-clear-300">TIS정보기술교육센터</li>
                                 </ul>
                             </div>
                         </div>
@@ -177,18 +177,18 @@ export function PageNum5({pageIdx}) { // 5페이지 - 인적사항 + Footer
                         <div className="w-full h-[6px] bg-gradient-to-r from-[#51a2e980] to-[#a878a280] hidden md:block" />
 
                         {/* LICENSE */}
-                        <div className="w-full h-full relative p-2 pb-4 md:p-0 md:pb-0 text-white rounded-lg flex flex-col items-center justify-start md:gap-4">
+                        <div className="w-full h-full relative p-2 pb-4 md:p-0 md:pb-4 2xl:pb-0 text-white rounded-lg flex flex-col items-center justify-start md:gap-2 2xl:gap-4">
                             <div
                                 className="absolute inset-0 rounded-lg md:hidden"
                                 style={maskBorderStyle}
                             />
-                            <h4 className="text-[18px] md:text-[26px] relative z-10 font-bold mt-2 md:mt-7 text-[#ff4d5a] title-mixed-font">LICENSE</h4>
+                            <h4 className="text-[18px] md:text-[26px] relative z-10 font-bold mt-2 md:mt-3 2xl:mt-7 text-[#ff4d5a] title-mixed-font">LICENSE</h4>
                             <div className="flex-1 flex items-center md:items-start justify-center">
-                                <ul className="w-full h-full flex flex-col justify-between py-4 md:py-0 md:pb-7">
-                                    <li className="text-[12px] md:text-[18px] whitespace-nowrap weight-clear-300">정보처리산업기사</li>
-                                    <li className="text-[12px] md:text-[18px] whitespace-nowrap weight-clear-300">웹디자인기능사</li>
-                                    <li className="text-[12px] md:text-[18px] whitespace-nowrap weight-clear-300">컴퓨터그래픽스기능사</li>
-                                    <li className="text-[12px] md:text-[18px] whitespace-nowrap weight-clear-300">사무자동화산업기사</li>
+                                <ul className="w-full h-full flex flex-col justify-between py-4 md:py-0 2xl:pb-7">
+                                    <li className="max-[350px]:text-[11px] text-[12px] md:text-[14px] 2xl:text-[18px] whitespace-nowrap weight-clear-300">정보처리산업기사</li>
+                                    <li className="max-[350px]:text-[11px] text-[12px] md:text-[14px] 2xl:text-[18px] whitespace-nowrap weight-clear-300">웹디자인기능사</li>
+                                    <li className="max-[350px]:text-[11px] text-[12px] md:text-[14px] 2xl:text-[18px] whitespace-nowrap weight-clear-300">컴퓨터그래픽스기능사</li>
+                                    <li className="max-[350px]:text-[11px] text-[12px] md:text-[14px] 2xl:text-[18px] whitespace-nowrap weight-clear-300">사무자동화산업기사</li>
                                 </ul>
                             </div>
                         </div>
@@ -196,20 +196,20 @@ export function PageNum5({pageIdx}) { // 5페이지 - 인적사항 + Footer
                     
 
                     {/* CAREER */}
-                    <div className="w-full md:w-1/2 h-1/2 md:h-full relative pl-2 pr-2 pb-4 md:pl-0 md:pr-0 md:pb-0 text-white rounded-lg flex flex-col items-center justify-start relative md:gap-4">
+                    <div className="w-full md:w-1/2 h-1/2 md:h-full relative pl-2 pr-2 pb-4 md:pl-0 md:pr-0 md:pb-4 2xl:pb-0 text-white rounded-lg flex flex-col items-center justify-start relative md:gap-2 2xl:gap-4">
                         <div className="hidden md:absolute top-[3px] left-0 h-[calc(100%-6px)] w-[3px] bg-[#a878a280] hidden md:block" />
                         <div
                             className="absolute inset-0 rounded-lg md:hidden"
                             style={maskBorderStyle}
                         />
-                        <h4 className="text-[18px] md:text-[26px] relative z-10 font-bold mt-4 md:mt-7 text-[#ff4d5a] title-mixed-font">CAREER</h4>
+                        <h4 className="text-[18px] md:text-[26px] relative z-10 font-bold mt-4 md:mt-3 2xl:mt-7 text-[#ff4d5a] title-mixed-font">CAREER</h4>
                         <div className="flex-1 flex items-center md:items-start justify-center">
-                            <ul className="w-full h-full flex flex-col justify-between py-4 md:py-0 md:pb-7">
-                                <li className="text-[12px] md:text-[18px] whitespace-nowrap weight-clear-300">미림미디어랩<Br/>( 2022.06 ~ 2023.09 )</li>
-                                <li className="text-[12px] md:text-[18px] whitespace-nowrap weight-clear-300">미림미디어랩 [ 프리랜서 ]<Br/>( 2023.10 ~ 2023.12 )</li>
-                                <li className="text-[12px] md:text-[18px] whitespace-nowrap weight-clear-300">다락컴퍼니<Br/>( 2024.02 ~ 2025.04 )</li>
-                                <li className="text-[12px] md:text-[18px] whitespace-nowrap weight-clear-300">비즈엠디지 [ 프리랜서 ]<Br/>( 2025.06 ~ 2025.10 )</li>
-                                <li className="text-[12px] md:text-[18px] whitespace-nowrap weight-clear-300">리얼스터디 [ 프리랜서 ]<Br/>( 2025.10 ~ 2026.02 )</li>
+                            <ul className="w-full h-full flex flex-col justify-between py-4 md:py-0 2xl:pb-7">
+                                <li className="max-[350px]:text-[11px] text-[12px] md:text-[14px] 2xl:text-[18px] whitespace-nowrap weight-clear-300">미림미디어랩<Br/>( 2022.06 ~ 2023.09 )</li>
+                                <li className="max-[350px]:text-[11px] text-[12px] md:text-[14px] 2xl:text-[18px] whitespace-nowrap weight-clear-300">미림미디어랩 [ 프리랜서 ]<Br/>( 2023.10 ~ 2023.12 )</li>
+                                <li className="max-[350px]:text-[11px] text-[12px] md:text-[14px] 2xl:text-[18px] whitespace-nowrap weight-clear-300">다락컴퍼니<Br/>( 2024.02 ~ 2025.04 )</li>
+                                <li className="max-[350px]:text-[11px] text-[12px] md:text-[14px] 2xl:text-[18px] whitespace-nowrap weight-clear-300">비즈엠디지 [ 프리랜서 ]<Br/>( 2025.06 ~ 2025.10 )</li>
+                                <li className="max-[350px]:text-[11px] text-[12px] md:text-[14px] 2xl:text-[18px] whitespace-nowrap weight-clear-300">리얼스터디 [ 프리랜서 ]<Br/>( 2025.10 ~ 2026.02 )</li>
                             </ul>
                         </div>
                     </div>

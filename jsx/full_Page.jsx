@@ -229,7 +229,7 @@ export function HorizontalSlider({ sliderData, pageIdx, currentSlide, setCurrent
   return (
     <>
 <div className="absolute top-[60px] md:top-[76px] left-1/2 -translate-x-1/2 -translate-y-1/2 z-50">
-  <h2 className="text-2xl md:text-4xl whitespace-nowrap relative font-orbitron before:content-[''] before:absolute before:block before:w-[100%] before:max-w-[200px] before:h-1/3 before:bg-red-500 before:bottom-0 before:right-[-30px] before:-z-10">
+  <h2 className="text-2xl md:text-4xl whitespace-nowrap relative font-orbitron before:content-[''] before:absolute before:block before:w-[100%] before:max-w-[200px] before:h-1/3 before:bg-red-500 before:bottom-0 before:right-[-24px] before:-z-10">
     {pageIdx === 2 ? "Personal Project" : "Commercial Project"}
   </h2>
 </div>
@@ -295,7 +295,7 @@ export function HorizontalSlider({ sliderData, pageIdx, currentSlide, setCurrent
                       <div className={`relative z-20 w-full h-full flex items-center justify-center overflow-hidden rounded-[10px] border ${activeId === item.id ? "border-transparent" : "border-white/20"}`}>
                         {activeId === item.id ? (
                           <div className={`absolute w-full h-full bg-black/20 z-50 opacity-100 duration-500 flex items-end justify-center animate-fadeIn`}>
-                            <span className="font-orbitron opacity-80 text-2xl mb-10 tracking-wider">VIEW PROJECT</span>
+                            <span className="hidden 2xl:block font-orbitron opacity-80 text-2xl mb-10 tracking-wider">VIEW PROJECT</span>
                           </div>
                         ) : null}
                         <img className="w-full h-auto rounded-[10px] pointer-events-none" src={item.MainImages} alt={item.name} />
@@ -305,11 +305,11 @@ export function HorizontalSlider({ sliderData, pageIdx, currentSlide, setCurrent
                 </div>
 
                 <div className="w-full h-[50%] md:h-[35%] flex flex-col items-center justify-start md:justify-center mt-6 md:mt-2">
-                  <h4 className="text-xl md:text-3xl font-bold font-orbitron title-mixed-font">{item.name}</h4>
-                  <p className="text-[15px] md:text-lg font-light opacity-60 mt-2 md:mt-4 px-4 text-center line-clamp-4 md:line-clamp-none leading-relaxed weight-clear-300 md:whitespace-nowrap break-keep">
+                  <h4 className="max-[350px]:text-[18px] text-xl md:text-2xl 2xl:text-3xl font-bold font-orbitron title-mixed-font">{item.name}</h4>
+                  <p className="text-[14px] md:text-lg font-light opacity-60 mt-2 md:mt-3 2xl:mt-4 px-4 text-center line-clamp-4 md:line-clamp-none leading-relaxed weight-clear-300 md:whitespace-nowrap break-keep">
                     {item.contentS}
                   </p>
-                  <div className="flex flex-col md:flex-row gap-2 md:gap-4 items-center mt-4 md:mt-8">
+                  <div className="flex flex-col md:flex-row gap-2 md:gap-4 items-center mt-4 2xl:mt-8">
                     <div className="text-[16px] md:text-xs font-mono opacity-40 uppercase tracking-[2px] md:tracking-[0.2em]">Key skills</div>
                     <div className="flex gap-2 md:gap-3">
                       {item.Language && item.Language.map((langValue) => {
@@ -317,7 +317,7 @@ export function HorizontalSlider({ sliderData, pageIdx, currentSlide, setCurrent
                         if (!targetLang) return null;
                         return (
                           <div key={langValue} className="group relative">
-                            <img src={targetLang.src} alt={langValue} className="w-5 h-5 md:w-9 md:h-9 transition-transform duration-300 group-hover:scale-125 object-contain" />
+                            <img src={targetLang.src} alt={langValue} className="w-5 h-5 md:w-7 md:h-7 2xl:w-9 2xl:h-9 transition-transform duration-300 group-hover:scale-125 object-contain" />
                           </div>
                         );
                       })}
