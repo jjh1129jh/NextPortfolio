@@ -1,18 +1,28 @@
+/* 1. 외부 리소스 로딩 (반드시 최상단에 위치해야 함) */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
 @import "tailwindcss";
 
-/* 1. 구글 폰트 로딩 */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
-
-/* 2. Tailwind v4 방식의 테마 변수 등록 */
+/* 2. Tailwind v4 테마 설정 */
 @theme {
+  /* 폰트 설정: 대소문자 및 폰트 패밀리 명칭 확인 */
   --font-orbitron: "Orbitron", sans-serif;
-  --color-check-red: #ff0000; /* 테스트용 색상 */
+  
+  /* 커스텀 색상 및 변수 (필요시 추가) */
+  --color-check-red: #ff0000;
+}
+
+/* 3. 기본 스타일 초기화 및 설정 */
+:root {
+  --background: #181818;
+  --foreground: #ffffff;
 }
 
 body {
-  /* background-color: #141414; */
-  /* color: white; */
-  /* 기본 폰트를 Orbitron으로 쓰고 싶다면 아래 주석 해제 */
+  background-color: var(--background);
+  color: var(--foreground);
+  margin: 0;
+  padding: 0;
+  /* 기본 폰트 설정 (선택 사항) */
   /* font-family: var(--font-orbitron); */
 }
 
@@ -21,15 +31,57 @@ a {
   text-decoration: none;
 }
 
+/* 4. 레이어 및 유틸리티 클래스 */
 @layer utilities {
-  /* 크롬, 사파리, 오페라에서 스크롤바 숨기기 */
+  /* 스크롤바 숨기기 유틸리티 */
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
-
-  /* 파이어폭스, IE, 엣지에서 스크롤바 숨기기 */
   .no-scrollbar {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
+  }
+
+  /* 텍스트 줄바꿈 방지 및 말줄임표 */
+  .text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+/* 5. 전역 애니메이션 키프레임 */
+
+/* 호버 시 무지개 보더 애니메이션 */
+@keyframes moveGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 섹션 등장 페이드인 애니메이션 */
+@keyframes fadeIn { 
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  } 
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  } 
+}
+
+/* 애니메이션 클래스 적용 */
+.animate-fadeIn { 
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; 
+}
+
+/* 6. 모바일 대응 추가 수정 (폰트 렌더링 최적화) */
+@media screen and (max-width: 768px) {
+  h2, h4, .font-orbitron {
+    /* 모바일에서 폰트가 뭉쳐 보이지 않도록 가독성 보정 */
+    letter-spacing: 0.05em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
