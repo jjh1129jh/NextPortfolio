@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import ParticleBackground from "./particle_Bg.jsx";
 import SinglePage from "./single_Page.jsx";
 import { useMobile } from "./useMobile.jsx";
+import { Language } from "./LanguageData.jsx";
 
 // 메인
 export default function FullPageScroll({ dataobjA, dataobjB }) {
@@ -123,6 +124,7 @@ useEffect(() => {
 // 포트폴리오 파트
 export function HorizontalSlider({ dataobjA, dataobjB, pageIdx, bgClass }) {
   const scrollRef = useRef(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
   const [isDrag, setIsDrag] = useState(false);
   const [startX, setStartX] = useState(0);
   const [initialX, setInitialX] = useState(0);
@@ -167,6 +169,8 @@ export function HorizontalSlider({ dataobjA, dataobjB, pageIdx, bgClass }) {
     }
 
     targetIndex = Math.max(0, Math.min(targetIndex, sliderData.length - 1));
+    
+    setCurrentSlide(targetIndex);
 
     scrollRef.current.style.scrollSnapType = "x mandatory";
     scrollRef.current.style.scrollBehavior = "smooth";
@@ -184,14 +188,10 @@ export function HorizontalSlider({ dataobjA, dataobjB, pageIdx, bgClass }) {
 
   const router = useRouter();
   const portFolioLink = (id) => {
-    console.log("링크 클릭!");
     router.push(`/portfolio/${id}`);
   };
 
-  function PopupLink(e) {
-  // 세 번째 인자(옵션)를 완전히 비우면 브라우저가 새 탭으로 엽니다.
-  window.open(e, "_blank");
-}
+
 
   return (
     <div
@@ -206,24 +206,79 @@ export function HorizontalSlider({ dataobjA, dataobjB, pageIdx, bgClass }) {
       className="w-full h-full flex overflow-x-hidden snap-x snap-mandatory no-scrollbar cursor-grab active:cursor-grabbing select-none"
       style={{ touchAction: 'pan-y' }}
     >
-      <div className="absolute top-[60px] md:top-[100px] left-1/2 -translate-x-1/2 -translate-y-1/2"><h2 className="text-3xl md:text-4xl whitespace-nowrap relative before:content-[''] before:absolute before:block before:w-full before:h-1/3 before:bg-red-500 before:bottom-0 before:right-[-30px] before:-z-10">{pageIdx === 2 ? "Personal Project" : "Commercial Project"}</h2></div>
+      <div className="absolute top-[60px] md:top-[76px] left-1/2 -translate-x-1/2 -translate-y-1/2"><h2 className="text-3xl md:text-4xl whitespace-nowrap relative before:content-[''] before:absolute before:block before:w-full before:h-1/3 before:bg-red-500 before:bottom-0 before:right-[-30px] before:-z-10">{pageIdx === 2 ? "Personal Project" : "Commercial Project"}</h2></div>
       {sliderData.map((item, id) => (
         <div key={id} className={`min-w-full h-full snap-center snap-always flex flex-col items-center justify-center border-x border-white/5 ${bgClass} p-4 md:p-12`}>
-          <div className="text-center animate-fadeIn pointer-events-none">
-            <h2 className="text-5xl md:text-7xl font-black mb-2 tracking-tighter uppercase leading-none">SECTION {pageIdx}</h2>
-            <p className="pointer-events-auto cursor-pointer" onClick={() => { portFolioLink(item.id) }}>{item.id}</p>
-            <p className="text-xl md:text-2xl font-light opacity-60">{item.content}</p>
-            <a onClick={ 
-              ()=>{PopupLink(item.weblink)}
-              } className="text-xl md:text-2xl font-light opacity-60 pointer-events-auto">{item.weblink}</a>
-            <div className="mt-8 flex gap-2 justify-center">
-              {sliderData.map((_, dot) => (
-                <div key={dot} className={`w-2 h-2 rounded-full transition-all duration-300 ${dot === id ? 'bg-white w-8' : 'bg-white/20'}`} />
-              ))}
+          <div className="w-full h-full animate-fadeIn pointer-events-none">
+            <div className="mx-auto w-[90%] h-full md:pt-[91px] flex flex-col items-center justify-center">
+              <div className="w-full h-3/4">
+                <div 
+  className="mx-auto h-full aspect-video bg-gray-800 rounded-[10px] relative pointer-events-auto cursor-pointer group" 
+  onClick={() => portFolioLink(item.id)}
+>
+<div 
+    className="absolute -inset-[2px] rounded-[12px] z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+    style={{
+      background: 'linear-gradient(60deg, #5f86f2, #a65ff2, #f25fd0, #f25f61, #f2cb5f, #abf25f, #5ff281, #5ff2f0)',
+      backgroundSize: '300% 300%',
+      animation: 'moveGradient 1s alternate infinite', // 직접 선언
+    }}
+  />
+  <div className="absolute inset-0 bg-[#181818] rounded-[10px] z-10" />
+<div className="relative z-20 w-full h-full flex items-center justify-center overflow-hidden rounded-[10px]">
+    <img 
+      className="w-auto max-h-full rounded-[10px] border border-white/5 pointer-events-none" 
+      src={item.MainImages} 
+      alt={item.name} 
+    />
+  </div>
+  <style jsx>{`
+    @keyframes moveGradient {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+  `}</style>
+                </div>
+              </div>
+              <div className="w-full h-1/4 flex flex-col items-center">
+
+                <h4 className="md:text-2xl font-bold mt-4">{item.name}</h4>
+                <p className="font-light opacity-60 mt-3">{item.contentS}</p>
+                
+                <div className="flex gap-3 font-mono items-center mt-3">
+                  <div>Key skills :</div>
+                  {item.Language.map((langValue) => {
+                    const targetLang = Language.find((l) => l.value === langValue);
+
+                    if (!targetLang) return null;
+
+                    return (
+                      <div key={langValue} className="tech-item group relative">
+                        <img
+                          src={targetLang.src}
+                          alt={langValue}
+                          title={langValue}
+                          className="w-8 h-8 transition-transform duration-300 group-hover:scale-110 object-contain"
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
             </div>
           </div>
         </div>
       ))}
+      <div className="absolute bottom-10 left-0 w-full z-20 flex gap-2 justify-center items-end pointer-events-none">
+        {sliderData.map((_, dotIdx) => (
+          <div 
+            key={dotIdx} 
+            className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
+              dotIdx === currentSlide ? 'bg-white w-8' : 'bg-white/20'
+            }`} 
+          />
+        ))}
+      </div>
     </div>
   );
 }
