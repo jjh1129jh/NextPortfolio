@@ -31,6 +31,8 @@
   /* 배경색 등 변수 등록 */
   --color-background: #181818;
   --color-foreground: #ffffff;
+
+  --breakpoint-xs: 350px;
 }
 
 body {
@@ -124,3 +126,18 @@ a {
     -moz-osx-font-smoothing: grayscale;
   }
 }
+
+/* 아래로 움직이는 애니메이션 */
+@keyframes bounceVertical {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+/* 좌우로 움직이는 애니메이션 */
+@keyframes bounceHorizontal {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(10px); }
+}
+
+.animate-bounceVertical { animation: bounceVertical 2s infinite; }
+.animate-bounceHorizontal { animation: bounceHorizontal 2s infinite; }

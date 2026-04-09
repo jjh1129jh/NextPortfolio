@@ -20,7 +20,7 @@ export function PageNum1() { // 1페이지 - 배너페이지
         <div className={`w-full h-full flex flex-col items-center justify-center text-center p-4 md:p-12`}>
             <div className="animate-fadeIn">
               <h2 className="text-[30px] md:text-7xl tracking-[4px] uppercase leading-[110%] md:leading-[100%] title-mixed-font !font-black">Hello, I’m <br className="md:hidden"/><span className="text-[#ff4d5a]">JIHWAN JEONG</span>.</h2>
-              <p className="mt-4 opacity-70 tracking-widest uppercase text-[18px] md:text-2xl weight-clear-300">I’m a publisher<br className="md:hidden"/> & Front-end Engineer.</p>
+              <p className="mt-4 opacity-70 tracking-widest uppercase text-[14px] md:text-2xl weight-clear-300">I’m a publisher<br className="md:hidden"/> & Front-end Engineer.</p>
             </div>
         </div>
     )

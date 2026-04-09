@@ -76,8 +76,6 @@ useEffect(() => {
       <div ref={containerRef} className="h-dvh overflow-y-auto snap-y snap-mandatory no-scrollbar scroll-auto">
         {totalArr.map((_, i) => {
           const pageIdx = i + 1;
-          const isHorizontal = pageIdx === 2 || pageIdx === 3;
-
           return (
             <div key={pageIdx}>
               <div className="relative w-full h-full overflow-hidden bg-transparent z-50">
@@ -87,6 +85,17 @@ useEffect(() => {
                 id={`section-${pageIdx}`}
                 className="snap-section w-full h-dvh snap-start snap-always flex items-center justify-center relative overflow-hidden z-51"
               >
+                {/* 1페이지: Page Down 가이드 추가 */}
+                {pageIdx === 1 && (
+                  <>
+                    <SinglePage pageIdx={pageIdx} />
+                    <div className="absolute bottom-8 2xl:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40 animate-bounceVertical pointer-events-none">
+                      <span className="text-[10px] 2xl:text-[14px] font-mono tracking-[0.3em] uppercase">Scroll Down</span>
+                      <div className="w-[1px] h-6 bg-white/50 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:bg-white after:rotate-45" />
+                    </div>
+                  </>
+                )}
+
                 {/* 2페이지: Personal */}
                 {pageIdx === 2 && (
                   <HorizontalSlider 
@@ -108,7 +117,7 @@ useEffect(() => {
                   />
                 )}
                 
-                {pageIdx === 1 && <SinglePage pageIdx={pageIdx} />}
+                {/* 나머지 페이지들 */}
                 {isMobile ? (
                   <>
                     {pageIdx === 4 && <SinglePage pageIdx={pageIdx} type={"HALF1"} />}
@@ -152,6 +161,11 @@ useEffect(() => {
           to { opacity: 1; transform: translateY(0); } 
         }
         .animate-fadeIn { animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        @keyframes bounceHorizontal {
+          0%, 100% { transform: translateX(0); }
+          50% { transform: translateX(5px); }
+        }
+        .animate-bounceHorizontal { animation: bounceHorizontal 1s infinite; }
       `}</style>
     </main>
   );
@@ -210,18 +224,27 @@ export function HorizontalSlider({ sliderData, pageIdx, currentSlide, setCurrent
     const currentScroll = scrollRef.current.scrollLeft;
     
     let targetIndex = Math.round(currentScroll / width);
-    if (totalDistance > 5 || velocity > 0.2) {
-      if (initialX - endX > 0) targetIndex = Math.floor(currentScroll / width) + 1;
-      else targetIndex = Math.ceil(currentScroll / width) - 1;
+    if (totalDistance > 20 || velocity > 0.2) {
+      if (initialX - endX > 0) targetIndex = Math.ceil(currentScroll / width);
+      else targetIndex = Math.floor(currentScroll / width);
     }
     targetIndex = Math.max(0, Math.min(targetIndex, sliderData.length - 1));
 
     // 부모의 상태를 업데이트
     setCurrentSlide(targetIndex);
 
+    // 부드러운 이동 실행
+    scrollRef.current.scrollTo({ 
+      left: targetIndex * width, 
+      behavior: "smooth" 
+    });
+
+    // 이동 완료 후 스냅 재활성화 (걸림 현상 해결 핵심)
+    setTimeout(() => {
+      if (scrollRef.current) {
     scrollRef.current.style.scrollSnapType = "x mandatory";
-    scrollRef.current.style.scrollBehavior = "smooth";
-    scrollRef.current.scrollTo({ left: targetIndex * width, behavior: "smooth" });
+      }
+    }, 400);
   };
 
   if (!sliderData || sliderData.length === 0) return null;
@@ -233,6 +256,15 @@ export function HorizontalSlider({ sliderData, pageIdx, currentSlide, setCurrent
     {pageIdx === 2 ? "Personal Project" : "Commercial Project"}
   </h2>
 </div>
+
+      {/* 가로 슬라이드 안내 문구 (첫 번째 슬라이드에서만 표시) */}
+      {currentSlide === 0 && (
+        <div className="absolute bottom-[80px] md:bottom-[100px] left-1/2 -translate-x-1/2 md:-translate-0 md:left-auto md:right-[120px] z-[60] flex items-center gap-3 opacity-40 pointer-events-none">
+          <span className="text-[10px] md:text-[14px] font-orbitron tracking-[0.2em] uppercase">Slide Projects</span>
+          <span className="text-lg md:text-xl animate-bounceHorizontal">→</span>
+        </div>
+      )}
+
       <div
         ref={scrollRef}
         onMouseDown={onDragStart}
@@ -309,8 +341,8 @@ export function HorizontalSlider({ sliderData, pageIdx, currentSlide, setCurrent
                   <p className="text-[14px] md:text-lg font-light opacity-60 mt-2 md:mt-3 2xl:mt-4 px-4 text-center line-clamp-4 md:line-clamp-none leading-relaxed weight-clear-300 md:whitespace-nowrap break-keep">
                     {item.contentS}
                   </p>
-                  <div className="flex flex-col md:flex-row gap-2 md:gap-4 items-center mt-4 2xl:mt-8">
-                    <div className="text-[16px] md:text-xs font-mono opacity-40 uppercase tracking-[2px] md:tracking-[0.2em]">Key skills</div>
+                  <div className="flex gap-2 md:gap-4 items-center mt-4 2xl:mt-8">
+                    <div className="text-xs font-mono opacity-40 uppercase tracking-[2px] md:tracking-[0.2em]">Key skills</div>
                     <div className="flex gap-2 md:gap-3">
                       {item.Language && item.Language.map((langValue) => {
                         const targetLang = Language.find((l) => l.value === langValue);
@@ -328,6 +360,7 @@ export function HorizontalSlider({ sliderData, pageIdx, currentSlide, setCurrent
             </div>
           </div>
         ))}
+      </div>
 
         <style jsx>{`
         @keyframes moveGradient {
@@ -336,8 +369,6 @@ export function HorizontalSlider({ sliderData, pageIdx, currentSlide, setCurrent
           100% { background-position: 0% 50%; }
         }
       `}</style>
-      </div>
     </>
-
   );
 }
