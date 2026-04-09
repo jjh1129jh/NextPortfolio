@@ -184,7 +184,7 @@ export function PageNum5({pageIdx}) { // 5페이지 - 인적사항 + Footer
                     </div>
 
                     {/* CAREER */}
-                    <div className="w-full h-full relative p-2 text-white rounded-lg col-span-2 md:col-span-2 md:row-span-2 md:col-start-2 md:row-start-1 flex flex-col items-center justify-start">
+                    {/* <div className="w-full h-full relative p-2 text-white rounded-lg col-span-2 md:col-span-2 md:row-span-2 md:col-start-2 md:row-start-1 flex flex-col items-center justify-start">
                         <div
                             className="absolute inset-0 rounded-lg"
                             style={maskBorderStyle}
@@ -199,7 +199,7 @@ export function PageNum5({pageIdx}) { // 5페이지 - 인적사항 + Footer
                                 <li className="text-[12px] py-2 whitespace-nowrap">리얼스터디 ( 3개월 계약직 + α )<br/>(2025.10 ~ 2026.02)</li>
                             </ul>
                         </div>
-                    </div>
+                    </div> */}
 
                 </div>
 
