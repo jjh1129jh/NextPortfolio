@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+body {
+  /* background-color: #141414; */
+  /* color: white; */
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@layer utilities {
+  /* 크롬, 사파리, 오페라에서 스크롤바 숨기기 */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* 파이어폭스, IE, 엣지에서 스크롤바 숨기기 */
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+}
