@@ -46,7 +46,7 @@ export default async function Portfolio({ params }) {
         <div className="hidden md:block md:absolute inset-0 bg-gradient-to-t from-[#181818] via-transparent to-transparent" />
         
         {/* 배너 하단 프로젝트 이름 */}
-        <div className="md:absolute md:bottom-10 md:left-1/2 md:-translate-x-1/2 mx-auto md:mx-0 w-[90%] md:w-[60%] mt-6 md:mt-0">
+        <div className="md:absolute md:bottom-10 md:left-1/2 md:-translate-x-1/2 mx-auto md:mx-0 w-[90%] md:w-[60%] mt-10 md:mt-0">
           <h1 className="text-2xl md:text-7xl font-bold text-center title-mixed-font">
             {obj.name}
           </h1>
@@ -54,7 +54,7 @@ export default async function Portfolio({ params }) {
       </section>
 
       {/* 3. 상세 정보 섹션 (Composition, Features, Web) */}
-      <section className="relative z-[100] w-[90%] md:w-[60%] mx-auto py-3 md:py-20 flex flex-col gap-16">
+      <section className="relative z-[100] w-[90%] md:w-[60%] mx-auto py-8 md:py-20 flex flex-col gap-16">
         
         {/* 프로젝트 소개 및 링크 */}
         <div className="flex flex-col gap-6 md:border-l-2 md:border-sky-500 md:pl-8">
@@ -62,8 +62,25 @@ export default async function Portfolio({ params }) {
             {obj.contentL}
           </p>
   
-  {/* 디자인은 그대로 유지, '빈 배열' 체크 로직만 적용 */}
-  {obj.weblink && obj.weblink.length > 0 ? (
+  {/* 1. 링크가 있는 경우 (문자열이 비어있지 않거나, 배열에 내용이 있을 때) */}
+  {obj.weblink && (typeof obj.weblink === 'string' ? obj.weblink !== "" : obj.weblink.length > 0) ? (
+    <div className="flex flex-wrap gap-3 w-[80%] mx-auto md:mx-0 md:w-full justify-center md:justify-start">
+      {/* 2. 배열인지 문자열인지 판단하여 맵핑 또는 단일 출력 */}
+      {Array.isArray(obj.weblink) ? (
+        obj.weblink.map((url, index) => (
+          <Link
+            key={index}
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 min-w-[140px] px-6 py-3 md:py-4 border bg-sky-500 md:bg-transparent border-sky-500 text-sky-400 font-bold text-sm md:text-base tracking-[0.2em] rounded-sm hover:bg-sky-500 hover:text-white transition-all duration-300 flex items-center gap-2 group justify-center"
+          >
+            {obj.weblink.length > 1 ? `홈페이지 ${index + 1}` : "홈페이지"}
+            <span className="group-hover:translate-x-1 transition-transform">→</span>
+          </Link>
+        ))
+      ) : (
+        /* 3. 단일 문자열 "https://..." 인 경우 */
             <Link 
               href={obj.weblink} 
               target="_blank" 
@@ -73,6 +90,8 @@ export default async function Portfolio({ params }) {
               홈페이지 
               <span className="group-hover:translate-x-1 transition-transform">→</span>
             </Link>
+      )}
+    </div>
           ) : (
             <button 
               disabled

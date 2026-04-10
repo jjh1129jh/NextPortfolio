@@ -7,7 +7,7 @@
         "contentL": "넷플릭스와 쿠팡플레이를 적절하게 섞은 카피 OTT 페이지입니다. 서버의 JSON에서 영화 정보를 불러오고 영화 상세페이지의 댓글 샘플을 REST.api로 호출합니다.",
         "colorcode": "#c31c24",
         "composition": ["메인페이지", "항목별 상세페이지", "마이페이지"],
-        "features": ["REST.api", "최근시청목록", "찜하기"],
+        "features": ["최근시청목록", "찜하기"],
         "MainImages": "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/MoviePage.png",
         "image" : [
             {
