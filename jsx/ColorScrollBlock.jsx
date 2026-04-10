@@ -9,14 +9,12 @@ export default function ColorScrollBlock({ data }) {
 
   return (
     <div className="flex flex-col gap-20 md:gap-24 w-full w-[90%] md:w-[60%] mx-auto px-6">
-      
-      {/* 1. imageS 섹션 (오토 스크롤) */}
+
       <div className="flex flex-col gap-20 md:gap-24">
         {imageS?.map((item, idx) => (
           item.img && (
             <div key={`imageS-${idx}`} className="flex flex-col gap-4">
-              
-              {/* 기기 검증형 안내 문구 */}
+
               <div className="flex justify-center md:justify-between items-end px-1 mb-0 md:mb-1">
                 <span className="text-[14px] hidden md:inline-block tracking-[0.2em] text-sky-500 font-bold uppercase">
                   Interactive Preview
@@ -43,7 +41,6 @@ export default function ColorScrollBlock({ data }) {
         ))}
       </div>
 
-      {/* 2. image 섹션 (일반 출력) */}
       <div className="flex flex-col gap-12 md:gap-20">
         {image?.map((item, idx) => (
           item.img && (
@@ -71,11 +68,10 @@ function ScrollableBox({ imgSrc }) {
   const containerRef = useRef(null);
   const imgRef = useRef(null);
 
-  // 이미지 로드 시 실제 너비 확인
   const handleImageLoad = (e) => {
     const { naturalWidth } = e.target;
-    // 원본 너비가 500px 미만이면 상태 변경
-    if (naturalWidth < 500) {
+    // 너비가 768px 미만이면 이미지 사이즈 조절
+    if (naturalWidth < 768) {
       setIsSmallImage(true);
     }
   };
@@ -88,7 +84,6 @@ function ScrollableBox({ imgSrc }) {
     const duration = (diff / 250).toFixed(1);
 
     return {
-      // isSmallImage 여부와 상관없이 세로 스크롤 로직은 동일
       transform: isScrolling ? `translateY(-${diff}px)` : 'translateY(0)',
       transitionDuration: isScrolling ? `${duration}s` : '0.8s',
     };
@@ -107,7 +102,6 @@ function ScrollableBox({ imgSrc }) {
         src={imgSrc}
         alt="preview"
         onLoad={handleImageLoad}
-        // isSmallImage일 때: 너비 50%, 절대 위치 중앙 정렬
         className={`h-auto absolute top-0 transition-transform ease-linear
           ${isSmallImage 
             ? 'w-1/3 left-1/2 -translate-x-1/2' 
