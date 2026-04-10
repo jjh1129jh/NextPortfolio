@@ -22,12 +22,12 @@ export default function ColorScrollBlock({ data }) {
                   Interactive Preview
                 </span>
                 <span className="text-[12px] md:text-[14px] text-gray-400 font-semibold">
-                  {/* 실제 마우스 사용 기기에서만 노출 */}
-                  <span className="hidden [@media(hover:hover)]:inline">
+                  {/* 정밀 포인터(마우스)가 있을 때만 노출 */}
+                  <span className="hidden [@media(pointer:fine)]:inline">
                     마우스를 호버해서 확인하세요 ↓
                   </span>
-                  {/* 터치 전용 혹은 호버 미지원 기기에서 노출 */}
-                  <span className="inline [@media(hover:hover)]:hidden">
+                  {/* 터치 기반 기기에서 노출 */}
+                  <span className="inline [@media(pointer:fine)]:hidden">
                     클릭해서 확인하세요 ↓
                   </span>
                 </span>
