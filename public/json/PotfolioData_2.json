@@ -4,39 +4,66 @@
         "name": "세븐브릭스 학습 페이지",
         "Language": ["css", "jquery"],
         "contentS": "학습활동을 하면서 자신만의 비버를 꾸밀수있는 교육콘텐츠입니다.",
-        "contentL": "학습활동을 하면서 자신만의 비버를 꾸밀수있는 교육콘텐츠입니다.",
+        "contentL": "학습활동을 하면서 자신만의 비버를 꾸밀수있는 교육콘텐츠입니다. DB기반으로 사용자 정보를 불러와서 진도체크와 일일학습, 중간고사, 기말고사등을 볼 수 있습니다. (* DB를 개인이 접근할수없어 링크를 불러올수없습니다. )",
         "contribution": "★★★★★",
         "participants": "3명",
         "responsibilities": "개발 및 디자인",
         "MainImages": "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_15.png",
         "weblink": [],
         "bgcolor": "#353535",
-        "image" : [
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            },
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            },
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            }
-        ],
+        "image" : [],
         "imageS" : [
             {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_15_1.png",
+                "text" : "메인화면입니다. 꾸며진 비버의 모습과 공지사항을 확인할수있습니다."
             },
             {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_15_2.png",
+                "text" : "일일학습 국어"
             },
             {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_15_3.png",
+                "text" : "일일학습 수학"
+            },
+            {
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_15_4.png",
+                "text" : "일일학습 영어"
+            },
+            {
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_15_5.png",
+                "text" : "일일학습 국어 저학년 화면"
+            },
+            {
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_15_6.png",
+                "text" : "진행중인 단계 페이지"
+            },
+            {
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_15_7.png",
+                "text" : "단계를 완료했을경우"
+            },
+            {
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_15_8.png",
+                "text" : "오늘의 학습 탭 화면"
+            },
+            {
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_15_9.png",
+                "text" : "주간 스케줄 입력 화면"
+            },
+            {
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_15_10.png",
+                "text" : "주간 스케줄 스티커 생성 화면"
+            },
+            {
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_15_11.png",
+                "text" : "비버 꾸미기 상점"
+            },
+            {
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_15_12.png",
+                "text" : "옵션 탭"
+            },
+            {
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_15_13.png",
+                "text" : "이용권 구매 탭"
             }
         ],
         "objcolor": "#e3ba4e"
@@ -46,7 +73,7 @@
         "name": "쌤하고 홍보 페이지",
         "Language": ["css", "jquery"],
         "contentS": "새롭게 론칭한 쌤하고 학습도우미 서비스를 홍보하기위해 제작한 페이지입니다.",
-        "contentL": "쉐보레의 콜로라도가 25년 새로운 모델로 출시되면서 그에 맞춰 진행된 프로젝트입니다. 디지털 브로슈어형태로 제작되었으며. 외부와 내부의 구성을 볼수있고 차량 색상변경, PDF다운로드 등을 제공합니다.",
+        "contentL": "새롭게 론칭한 쌤하고 학습도우미 서비스를 홍보하기위해 제작한 페이지입니다. 스크롤 이벤트를 적용하여 스크롤을 내릴때 사용자가 지루하지 않게 하였습니다.",
         "contribution": "★★★★★",
         "participants": "3명",
         "responsibilities": "개발 및 디자인",
@@ -55,32 +82,19 @@
         "bgcolor": "#353535",
         "image" : [
             {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_14_Pc.png",
+                "text" : "반응형 표준"
             },
             {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_14_Tb.png",
+                "text" : "반응형 태블릿"
             },
             {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_14_Mb.png",
+                "text" : "반응형 모바일"
             }
         ],
-        "imageS" : [
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            },
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            },
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            }
-        ],
+        "imageS" : [],
         "objcolor": "#e3ba4e"
     },
     {
@@ -88,7 +102,7 @@
         "name": "쌤하고 학부모 페이지",
         "Language": ["css", "jquery"],
         "contentS": "자녀의 쌤하고 학습을 관리하기위한 학부모 모바일 페이지입니다.",
-        "contentL": "자녀의 쌤하고 학습을 관리하기위한 학부모 모바일 페이지입니다.",
+        "contentL": "자녀의 쌤하고 학습을 관리하기위한 학부모 모바일 페이지입니다. 모바일페이지를 기준으로 만들었으며 PC에서도 모바일페이지를 사용합니다. 상단의 검수버튼으로 서브페이지들을 확인가능합니다.",
         "contribution": "★★★★★",
         "participants": "3명",
         "responsibilities": "개발 및 디자인",
@@ -139,32 +153,27 @@
         "bgcolor": "#353535",
         "image" : [
             {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_13_1.png",
+                "text" : "메인페이지 5종"
             },
             {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_13_2.png",
+                "text" : "서브페이지 1"
             },
             {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_13_3.png",
+                "text" : "서브페이지 2"
+            },
+            {
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_13_4.png",
+                "text" : "서브페이지 3"
+            },
+            {
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_13_5.png",
+                "text" : "서브페이지 4"
             }
         ],
-        "imageS" : [
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            },
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            },
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            }
-        ],
+        "imageS" : [],
         "objcolor": "#e3ba4e"
     },
     {
@@ -181,32 +190,39 @@
         "bgcolor": "#353535",
         "image" : [
             {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_11_1.png",
+                "text" : "콜로라도 메인화면 (외부)"
             },
             {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_11_2.png",
+                "text" : "콜로라도 메인화면 (내부)"
             },
             {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_11_3.png",
+                "text" : "PDF 출력 1"
+            },
+            {
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_11_4.png",
+                "text" : "PDF 출력 2"
+            },
+            {
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_11_5.png",
+                "text" : "팝업 1"
+            },
+            {
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_11_6.png",
+                "text" : "팝업 2"
+            },
+            {
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_11_7.png",
+                "text" : "팝업 3"
+            },
+            {
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_11_8.png",
+                "text" : "상세정보 클릭 시 팝업 (원형 버튼)"
             }
         ],
-        "imageS" : [
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            },
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            },
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            }
-        ],
+        "imageS" : [],
         "objcolor": "#e3ba4e"
     },
     {
@@ -223,32 +239,23 @@
         "bgcolor": "#9b9372ff",
         "image" : [
             {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_10_1.png",
+                "text" : "메인 페이지"
             },
             {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_10_2.png",
+                "text" : "디지털 교과서"
             },
             {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_10_3.png",
+                "text" : "퀴즈 1"
+            },
+            {
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_10_4.png",
+                "text" : "퀴즈 2"
             }
         ],
-        "imageS" : [
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            },
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            },
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            }
-        ],
+        "imageS" : [],
         "objcolor": "#f05a94"
     },
     {
@@ -270,32 +277,23 @@
         "bgcolor": "#9c1621",
         "image" : [
             {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_9_1.png",
+                "text" : "몬스터 잡기 (1페이지 영상 끝난 직후)"
             },
             {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_9_2.png",
+                "text" : "줄긋기 퀴즈"
             },
             {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_9_3.png",
+                "text" : "애니메이션식 인터렉티브"
+            },
+            {
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_9_4.png",
+                "text" : "떨어지는 물체 받기 인터렉티브"
             }
         ],
-        "imageS" : [
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            },
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            },
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            }
-        ],
+        "imageS" : [],
         "objcolor": "coral"
     },
     {
@@ -317,32 +315,19 @@
         "bgcolor": "#66687eff",
         "image" : [
             {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_8_1.png",
+                "text" : "드래그앤드롭 단어맞추기 퀴즈"
             },
             {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_8_2.png",
+                "text" : "낱말퀴즈"
             },
             {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_8_3.png",
+                "text" : "360도 영상 + 하단 메뉴 북마크기능"
             }
         ],
-        "imageS" : [
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            },
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            },
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            }
-        ],
+        "imageS" : [],
         "objcolor": "#325175ff"
     },
     {
@@ -359,32 +344,15 @@
         "bgcolor": "#8294a8ff",
         "image" : [
             {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_7_1.png",
+                "text" : "영상을 로컬에서 불러와서 검수할수있습니다."
             },
             {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            },
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_7_2.png",
+                "text" : "캡쳐 후 PPT 내보내기 클릭 시 생성되는 PPT"
             }
         ],
-        "imageS" : [
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            },
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            },
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            }
-        ],
+        "imageS" : [],
         "objcolor": "#4a88d4ff"
     },
     {
@@ -401,32 +369,23 @@
         "bgcolor": "#19363c",
         "image" : [
             {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_6_1.png",
+                "text" : "메인화면"
             },
             {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_6_2.png",
+                "text" : "영상 재생 1"
             },
             {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_6_3.png",
+                "text" : "영상 재생 2"
+            },
+            {
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_6_4.png",
+                "text" : "인체 3D 인터렉티브"
             }
         ],
-        "imageS" : [
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            },
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            },
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            }
-        ],
+        "imageS" : [],
         "objcolor": "#269da9"
     },
     {
@@ -443,32 +402,35 @@
         "bgcolor": "#435536ff",
         "image" : [
             {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_5_1.png",
+                "text" : "메인화면"
             },
             {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_5_2.png",
+                "text" : "인터렉티브 인트로"
             },
             {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_5_3.png",
+                "text" : "세계 이상 기후"
+            },
+            {
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_5_4.png",
+                "text" : "세계 이상 기후 좌표 클릭 시"
+            },
+            {
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_5_5.png",
+                "text" : "나의 식물 찾기 인터렉티브"
+            },
+            {
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_5_6.png",
+                "text" : "나의 식물 찾기 결과 화면"
+            },
+            {
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_5_7.png",
+                "text" : "영상 재생"
             }
         ],
-        "imageS" : [
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            },
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            },
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            }
-        ],
+        "imageS" : [],
         "objcolor": "#006b5f"
     },
     {
@@ -485,32 +447,23 @@
         "bgcolor": "#627fa0",
         "image" : [
             {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_4_1.png",
+                "text" : "키보드 인터렉티브"
             },
             {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_4_2.png",
+                "text" : "드래그앤드롭 인터렉티브"
             },
             {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_4_3.png",
+                "text" : "OX 퀴즈"
+            },
+            {
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_4_4.png",
+                "text" : "사지선다 퀴즈"
             }
         ],
-        "imageS" : [
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            },
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            },
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            }
-        ],
+        "imageS" : [],
         "objcolor": "#64a9fb"
     },
     {
@@ -525,34 +478,8 @@
         "MainImages": "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_3.png",
         "weblink": [],
         "bgcolor": "#afa496",
-        "image" : [
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            },
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            },
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            }
-        ],
-        "imageS" : [
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            },
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            },
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            }
-        ],
+        "image" : [],
+        "imageS" : [],
         "objcolor": "#6f4620"
     },
     {
@@ -567,34 +494,8 @@
         "MainImages": "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_2.png",
         "weblink": [],
         "bgcolor": "#7f9ec0",
-        "image" : [
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            },
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            },
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            }
-        ],
-        "imageS" : [
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            },
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            },
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            }
-        ],
+        "image" : [],
+        "imageS" : [],
         "objcolor": "#a5cae7"
     },
     {
@@ -609,34 +510,8 @@
         "MainImages": "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_1.png",
         "weblink": [],
         "bgcolor": "#2e0e4d",
-        "image" : [
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            },
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            },
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            }
-        ],
-        "imageS" : [
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            },
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            },
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            }
-        ],
+        "image" : [],
+        "imageS" : [],
         "objcolor": "#82659e"
     }
 ]
