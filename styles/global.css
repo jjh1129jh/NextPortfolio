@@ -148,5 +148,6 @@ a {
 }
 
 .animate-image-scroll {
+  /* 변수로 속도 조절 */
   animation: scroll-down var(--scroll-duration) linear forwards;
 }

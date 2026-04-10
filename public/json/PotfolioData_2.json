@@ -80,7 +80,8 @@
         "MainImages": "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_14.png",
         "weblink": ["https://samhago.com/"],
         "bgcolor": "#353535",
-        "image" : [
+        "image" : [],
+        "imageS" : [
             {
                 "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_14_Pc.png",
                 "text" : "반응형 표준"
@@ -94,7 +95,6 @@
                 "text" : "반응형 모바일"
             }
         ],
-        "imageS" : [],
         "objcolor": "#e3ba4e"
     },
     {
@@ -108,48 +108,6 @@
         "responsibilities": "개발 및 디자인",
         "MainImages": "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_13.png",
         "weblink": ["https://commercial-sevenbricksoms.vercel.app/html/html/parentsclassSelect.html"],
-        "bgcolor": "#353535",
-        "image" : [
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            },
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            },
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            }
-        ],
-        "imageS" : [
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            },
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            },
-            {
-                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/",
-                "text" : ""
-            }
-        ],
-        "objcolor": "#e3ba4e"
-    },
-    {
-        "id": 96,
-        "name": "쌤하고 학습자 학습관리 페이지",
-        "Language": ["css", "jquery"],
-        "contentS": "선생님과 화상통화하면서 쌤하고 교육일정의 관리 및 소통을 진행합니다.",
-        "contentL": "선생님과 화상통화하면서 쌤하고 교육일정의 관리 및 소통을 진행합니다.",
-        "contribution": "★★★★★",
-        "participants": "3명",
-        "responsibilities": "개발 및 디자인",
-        "MainImages": "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_12.png",
-        "weblink": ["https://commercial-sevenbricksoms.vercel.app/html/html/userclassSelect.html"],
         "bgcolor": "#353535",
         "image" : [
             {
@@ -171,6 +129,39 @@
             {
                 "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_13_5.png",
                 "text" : "서브페이지 4"
+            }
+        ],
+        "imageS" : [],
+        "objcolor": "#e3ba4e"
+    },
+    {
+        "id": 96,
+        "name": "쌤하고 학습자 학습관리 페이지",
+        "Language": ["css", "jquery"],
+        "contentS": "선생님과 화상통화하면서 쌤하고 교육일정의 관리 및 소통을 진행합니다.",
+        "contentL": "선생님과 화상통화하면서 쌤하고 교육일정의 관리 및 소통을 진행합니다.",
+        "contribution": "★★★★★",
+        "participants": "3명",
+        "responsibilities": "개발 및 디자인",
+        "MainImages": "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_12.png",
+        "weblink": ["https://commercial-sevenbricksoms.vercel.app/html/html/userclassSelect.html"],
+        "bgcolor": "#353535",
+        "image" : [
+            {
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_12_S1.png",
+                "text" : "WEEK 주간스케줄 탭 - 영역을 드래그 해서 일정을 생성합니다."
+            },
+            {
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_12_S2.png",
+                "text" : "PLAN 만들기 탭 - 오늘 진행할 일정을 만듭니다."
+            },
+            {
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_12_S3.png",
+                "text" : "DO 공부하기 탭 - 오늘 해야할 목표와 타이머를 제공합니다."
+            },
+            {
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Commercial_12_S4.png",
+                "text" : "Check & Action 탭 - 오늘 하루 진행한 결과를 확인합니다."
             }
         ],
         "imageS" : [],
