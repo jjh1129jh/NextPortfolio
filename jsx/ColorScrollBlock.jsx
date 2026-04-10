@@ -70,8 +70,8 @@ function ScrollableBox({ imgSrc }) {
 
   const handleImageLoad = (e) => {
     const { naturalWidth } = e.target;
-    // 너비가 768px 미만이면 이미지 사이즈 조절
-    if (naturalWidth < 768) {
+    // 너비가 699px 미만이면 이미지 사이즈 조절
+    if (naturalWidth < 699) {
       setIsSmallImage(true);
     }
   };
