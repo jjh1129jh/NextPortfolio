@@ -288,8 +288,8 @@ export function HorizontalSlider({ sliderData, pageIdx, currentSlide, setCurrent
             <div className="w-full h-full animate-fadeIn pointer-events-none">
               <div className="mx-auto w-full md:w-[90%] h-full pt-[80px] md:pt-[110px] flex flex-col items-center justify-center">
 
-                <div className="w-full h-[50%] md:h-[65%] flex flex-col items-center justify-end md:justify-center">
-                  <p className="w-full text-[11px] md:text-[13px] 2xl:text-[14px] text-white text-center weight-clear-300 opacity-40 mb-3">이미지를 클릭하면 상세페이지로 이동합니다.</p>
+                <div className="w-full h-[50%] md:h-[65%] flex flex-col items-center justify-end md:justify-center gap-3">
+                  <p className="w-full text-[11px] md:text-[13px] 2xl:text-[14px] text-white text-center weight-clear-300 opacity-40">이미지를 클릭하면 상세페이지로 이동합니다.</p>
                   <div
                     className={`mx-auto w-full md:w-auto md:h-full aspect-video relative group pointer-events-auto 
                     ${isMobile ? 'cursor-pointer' : (activeId === item.id ? 'cursor-pointer' : 'cursor-not-allowed')}`}
@@ -338,12 +338,12 @@ export function HorizontalSlider({ sliderData, pageIdx, currentSlide, setCurrent
                   </div>
                 </div>
 
-                <div className="w-full h-[50%] md:h-[35%] flex flex-col items-center justify-start md:justify-center mt-6 md:mt-2">
+                <div className="w-full h-[50%] md:h-[35%] flex flex-col items-center justify-start md:justify-center mt-6 md:mt-0">
                   <h4 className="max-[350px]:text-[18px] text-xl md:text-2xl 2xl:text-3xl font-bold font-orbitron title-mixed-font">{item.name}</h4>
-                  <p className="text-[14px] md:text-lg font-light opacity-60 mt-2 md:mt-3 2xl:mt-4 px-4 text-center line-clamp-4 md:line-clamp-none leading-relaxed weight-clear-300 md:whitespace-nowrap break-keep">
+                  <p className="text-[14px] md:text-lg font-light opacity-60 mt-2 md:mt-3 px-4 text-center line-clamp-4 md:line-clamp-none leading-relaxed weight-clear-300 md:whitespace-nowrap break-keep">
                     {item.contentS}
                   </p>
-                  <div className="flex gap-2 md:gap-4 items-center mt-4 2xl:mt-8">
+                  <div className="flex gap-2 md:gap-4 items-center mt-4">
                     <div className="text-xs font-mono opacity-40 uppercase tracking-[2px] md:tracking-[0.2em]">Key skills</div>
                     <div className="flex gap-2 md:gap-3">
                       {item.Language && item.Language.map((langValue) => {
