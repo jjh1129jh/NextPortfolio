@@ -1,0 +1,120 @@
+'use client';
+
+import { useState, useRef } from 'react';
+
+export default function ColorScrollBlock({ data }) {
+  if (!data) return null;
+
+  const { imageS, image } = data;
+
+  return (
+    <div className="flex flex-col gap-24 w-full w-[90%] md:w-[60%] mx-auto px-6">
+      
+      {/* 1. imageS 섹션 (오토 스크롤) */}
+      <div className="flex flex-col gap-24">
+        {imageS?.map((item, idx) => (
+          item.img && (
+            <div key={`imageS-${idx}`} className="flex flex-col gap-4">
+              
+              {/* 기기 검증형 안내 문구 */}
+              <div className="flex justify-between items-end px-1 mb-1">
+                <span className="text-[14px] tracking-[0.2em] text-sky-500 font-bold uppercase">
+                  Interactive Preview
+                </span>
+                <span className="text-[14px] md:text-[14px] text-gray-400 font-semibold">
+                  {/* 실제 마우스 사용 기기에서만 노출 */}
+                  <span className="hidden [@media(hover:hover)]:inline">
+                    마우스를 호버해서 확인하세요 ↓
+                  </span>
+                  {/* 터치 전용 혹은 호버 미지원 기기에서 노출 */}
+                  <span className="inline [@media(hover:hover)]:hidden">
+                    클릭해서 확인하세요 ↓
+                  </span>
+                </span>
+              </div>
+              
+              <ScrollableBox imgSrc={item.img} />
+              
+              <p className="text-center text-gray-400 text-base font-light tracking-widest mt-2 uppercase">
+                {item.text}
+              </p>
+            </div>
+          )
+        ))}
+      </div>
+
+      {/* 2. image 섹션 (일반 출력) */}
+      <div className="flex flex-col gap-20">
+        {image?.map((item, idx) => (
+          item.img && (
+            <div key={`image-${idx}`} className="flex flex-col gap-4">
+              <img 
+                src={item.img} 
+                alt={item.text} 
+                className="w-full h-auto rounded-sm shadow-xl border border-white/5"
+              />
+              <p className="text-center text-gray-400 text-base font-light tracking-widest mt-2 uppercase">
+                {item.text}
+              </p>
+            </div>
+          )
+        ))}
+      </div>
+
+    </div>
+  );
+}
+
+function ScrollableBox({ imgSrc }) {
+  const [isScrolling, setIsScrolling] = useState(false);
+  const [isSmallImage, setIsSmallImage] = useState(false);
+  const containerRef = useRef(null);
+  const imgRef = useRef(null);
+
+  // 이미지 로드 시 실제 너비 확인
+  const handleImageLoad = (e) => {
+    const { naturalWidth } = e.target;
+    // 원본 너비가 500px 미만이면 상태 변경
+    if (naturalWidth < 500) {
+      setIsSmallImage(true);
+    }
+  };
+
+  const getScrollStyles = () => {
+    if (!imgRef.current || !containerRef.current) return {};
+    const diff = imgRef.current.offsetHeight - containerRef.current.offsetHeight;
+    if (diff <= 0) return {};
+
+    const duration = (diff / 250).toFixed(1);
+
+    return {
+      // isSmallImage 여부와 상관없이 세로 스크롤 로직은 동일
+      transform: isScrolling ? `translateY(-${diff}px)` : 'translateY(0)',
+      transitionDuration: isScrolling ? `${duration}s` : '0.8s',
+    };
+  };
+
+  return (
+    <div 
+      ref={containerRef}
+      className="relative w-full aspect-video overflow-hidden rounded-sm bg-[#222] border border-white/10 shadow-2xl"
+      onMouseEnter={() => setIsScrolling(true)}
+      onMouseLeave={() => setIsScrolling(false)}
+      onClick={() => setIsScrolling(!isScrolling)} 
+    >
+      <img
+        ref={imgRef}
+        src={imgSrc}
+        alt="preview"
+        onLoad={handleImageLoad}
+        // isSmallImage일 때: 너비 50%, 절대 위치 중앙 정렬
+        className={`h-auto absolute top-0 transition-transform ease-linear
+          ${isSmallImage 
+            ? 'w-1/3 left-1/2 -translate-x-1/2' 
+            : 'w-full left-0'
+          }`}
+        style={getScrollStyles()}
+      />
+    </div>
+  );
+}

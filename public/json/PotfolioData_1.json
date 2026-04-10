@@ -9,6 +9,34 @@
         "composition": ["메인페이지", "서브페이지(Nav전체, 상품페이지)"],
         "features": ["풀페이지(홈)", "Axios", "정렬 및 분류", "CART", "쿠폰적용"],
         "MainImages": "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/MoviePage.png",
+        "image" : [
+            {
+                "img" : "",
+                "text" : ""
+            },
+            {
+                "img" : "",
+                "text" : ""
+            },
+            {
+                "img" : "",
+                "text" : ""
+            }
+        ],
+        "imageS" : [
+            {
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/MoviePage_Pc.png",
+                "text" : "반응형 표준"
+            },
+            {
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/MoviePage_Tb.png",
+                "text" : "반응형 태블릿"
+            },
+            {
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/MoviePage_Mb.png",
+                "text" : "반응형 모바일"
+            }
+        ],
         "weblink": "https://nextmovie-page.vercel.app/"
     },
     {
@@ -21,6 +49,34 @@
         "composition": ["메인페이지", "서브페이지(Nav전체, 상품페이지)"],
         "features": ["풀페이지(홈)", "Axios", "정렬 및 분류", "CART", "쿠폰적용"],
         "MainImages": "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/New_Portfolio.png",
+        "image" : [
+            {
+                "img" : "",
+                "text" : ""
+            },
+            {
+                "img" : "",
+                "text" : ""
+            },
+            {
+                "img" : "",
+                "text" : ""
+            }
+        ],
+        "imageS" : [
+            {
+                "img" : "",
+                "text" : ""
+            },
+            {
+                "img" : "",
+                "text" : ""
+            },
+            {
+                "img" : "",
+                "text" : ""
+            }
+        ],
         "weblink": "https://nextportfoliojjh.vercel.app/"
     },
     {
@@ -33,6 +89,34 @@
         "composition": ["메인페이지", "서브페이지(Nav전체, 상품페이지)"],
         "features": ["풀페이지(홈)", "Axios", "정렬 및 분류", "CART", "쿠폰적용"],
         "MainImages": "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/CoffeeShop.png",
+        "image" : [
+            {
+                "img" : "",
+                "text" : ""
+            },
+            {
+                "img" : "",
+                "text" : ""
+            },
+            {
+                "img" : "",
+                "text" : ""
+            }
+        ],
+        "imageS" : [
+            {
+                "img" : "",
+                "text" : ""
+            },
+            {
+                "img" : "",
+                "text" : ""
+            },
+            {
+                "img" : "",
+                "text" : ""
+            }
+        ],
         "weblink": "https://jjh1129jh.github.io/CoffeeShop/"
     },
     {
@@ -45,6 +129,34 @@
         "composition": ["메인페이지", "팝업페이지"],
         "features": ["글 업로드 및 삭제", "댓글 작성 및 삭제", "인기포스트 표시"],
         "MainImages": "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/SnapCloud.png",
+        "image" : [
+            {
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/New_Portfolio.png",
+                "text" : "첫번째이미지"
+            },
+            {
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/SnapCloud.png",
+                "text" : "두번째이미지"
+            },
+            {
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/MoviePage_Mb.png",
+                "text" : "세번째이미지"
+            }
+        ],
+        "imageS" : [
+            {
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/MoviePage_Pc.png",
+                "text" : "반응형 표준"
+            },
+            {
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/MoviePage_Tb.png",
+                "text" : "반응형 태블릿"
+            },
+            {
+                "img" : "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/MoviePage_Mb.png",
+                "text" : "반응형 모바일"
+            }
+        ],
         "weblink": "https://jjh1129jh.github.io/SnapCloud/"
     },
     {
@@ -57,6 +169,34 @@
         "composition": ["메인페이지"],
         "features": ["풀페이지", "스와이퍼"],
         "MainImages": "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/Old_Portfolio.png",
+        "image" : [
+            {
+                "img" : "",
+                "text" : ""
+            },
+            {
+                "img" : "",
+                "text" : ""
+            },
+            {
+                "img" : "",
+                "text" : ""
+            }
+        ],
+        "imageS" : [
+            {
+                "img" : "",
+                "text" : ""
+            },
+            {
+                "img" : "",
+                "text" : ""
+            },
+            {
+                "img" : "",
+                "text" : ""
+            }
+        ],
         "weblink": "https://old-portfolio-beta.vercel.app/"
     },
     {
@@ -69,6 +209,34 @@
         "composition": ["메인페이지"],
         "features": ["풀페이지", "오브젝트 애니메이션"],
         "MainImages": "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/KFC.png",
+        "image" : [
+            {
+                "img" : "",
+                "text" : ""
+            },
+            {
+                "img" : "",
+                "text" : ""
+            },
+            {
+                "img" : "",
+                "text" : ""
+            }
+        ],
+        "imageS" : [
+            {
+                "img" : "",
+                "text" : ""
+            },
+            {
+                "img" : "",
+                "text" : ""
+            },
+            {
+                "img" : "",
+                "text" : ""
+            }
+        ],
         "weblink": "https://jhkfc.vercel.app/"
     },
     {
@@ -81,6 +249,34 @@
         "composition": ["메인페이지", "서브페이지(TOUR, HOTEL, FOOD)"],
         "features": ["Auto 슬라이드", "스와이퍼", "API 연동(구글맵스, 이미지뷰어)"],
         "MainImages": "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/YILAN.png",
+        "image" : [
+            {
+                "img" : "",
+                "text" : ""
+            },
+            {
+                "img" : "",
+                "text" : ""
+            },
+            {
+                "img" : "",
+                "text" : ""
+            }
+        ],
+        "imageS" : [
+            {
+                "img" : "",
+                "text" : ""
+            },
+            {
+                "img" : "",
+                "text" : ""
+            },
+            {
+                "img" : "",
+                "text" : ""
+            }
+        ],
         "weblink": "https://jhyilan.vercel.app/"
     },
     {
@@ -93,6 +289,34 @@
         "composition": ["메인페이지", "서브페이지(LOGIN)"],
         "features": ["Auto 슬라이드"],
         "MainImages": "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/NIKON.png",
+        "image" : [
+            {
+                "img" : "",
+                "text" : ""
+            },
+            {
+                "img" : "",
+                "text" : ""
+            },
+            {
+                "img" : "",
+                "text" : ""
+            }
+        ],
+        "imageS" : [
+            {
+                "img" : "",
+                "text" : ""
+            },
+            {
+                "img" : "",
+                "text" : ""
+            },
+            {
+                "img" : "",
+                "text" : ""
+            }
+        ],
         "weblink": "https://jhnikon.vercel.app/"
     },
     {
@@ -105,6 +329,34 @@
         "composition": ["메인페이지", "서브페이지(LOGIN, JOIN)"],
         "features": ["-"],
         "MainImages": "https://raw.githubusercontent.com/jjh1129jh/PotfolioJSON/refs/heads/main/img/DONGBANG.png",
+        "image" : [
+            {
+                "img" : "",
+                "text" : ""
+            },
+            {
+                "img" : "",
+                "text" : ""
+            },
+            {
+                "img" : "",
+                "text" : ""
+            }
+        ],
+        "imageS" : [
+            {
+                "img" : "",
+                "text" : ""
+            },
+            {
+                "img" : "",
+                "text" : ""
+            },
+            {
+                "img" : "",
+                "text" : ""
+            }
+        ],
         "weblink": "https://jhdongbang.vercel.app/"
     }
 

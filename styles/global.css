@@ -141,3 +141,12 @@ a {
 
 .animate-bounceVertical { animation: bounceVertical 2s infinite; }
 .animate-bounceHorizontal { animation: bounceHorizontal 2s infinite; }
+
+@keyframes scroll-down {
+  from { transform: translateY(0); }
+  to { transform: translateY(var(--scroll-target)); }
+}
+
+.animate-image-scroll {
+  animation: scroll-down var(--scroll-duration) linear forwards;
+}
