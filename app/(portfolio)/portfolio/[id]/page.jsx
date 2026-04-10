@@ -93,7 +93,7 @@ export default async function Portfolio({ params }) {
     <div className="flex flex-wrap gap-3">
       {obj.composition?.map((item, index) => (
         <span 
-          key={index} 
+          key={`comp-${index}`} 
           className="px-4 py-2 bg-white/10 rounded-full text-[12px] md:text-sm font-medium text-gray-200 border border-white/5"
         >
           {item}
@@ -110,10 +110,27 @@ export default async function Portfolio({ params }) {
     <div className="flex flex-wrap gap-3">
       {obj.features?.map((item, index) => (
         <span 
-          key={index} 
-          className="px-4 py-2 bg-sky-500/10 rounded-full text-[12px] md:text-sm font-bold text-sky-400 border border-sky-500/20"
+          key={`feat-${index}`} 
+          className="px-4 py-2 bg-white/10 rounded-full text-[12px] md:text-sm font-medium text-gray-200 border border-white/5"
         >
           # {item}
+        </span>
+      ))}
+    </div>
+  </div>
+
+  {/* Language 섹션 */}
+  <div className="flex flex-col gap-5 md:col-span-2 md:border-t-0 border-white/5 pt-5 md:pt-0">
+    <h3 className="text-sky-500 text-sm font-bold tracking-[0.3em] uppercase border-b border-white/10 pb-2 w-fit">
+      Use Language
+    </h3>
+    <div className="flex flex-wrap gap-3">
+      {obj.Language?.map((item, index) => (
+        <span 
+          key={`lang-${index}`} 
+          className="px-4 py-2 bg-sky-500/10 rounded-full text-[12px] md:text-sm font-bold text-sky-400 border border-sky-500/20 uppercase"
+        >
+          {item}
         </span>
       ))}
     </div>
