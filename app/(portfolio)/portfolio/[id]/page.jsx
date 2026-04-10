@@ -15,7 +15,6 @@ export async function getData(id) {
 
     // 3. 합쳐진 전체 데이터에서 id가 일치하는 항목을 찾습니다.
     const item = allData.find((item) => item.id === Number(id));
-    
     return item;
 }
 
@@ -24,6 +23,8 @@ export async function getData(id) {
 export default async function Portfolio({ params }) {
   const { id } = await params;
   const obj = await getData(id);
+
+  
 
   return (
     <div className="w-full min-h-screen relative bg-[#181818] text-white font-sans overflow-x-hidden">
@@ -60,22 +61,22 @@ export default async function Portfolio({ params }) {
           <p className="text-[15px] md:text-2xl text-center md:text-start font-light leading-relaxed text-gray-200 title-mixed-font break-keep">
             {obj.contentL}
           </p>
-        {obj.weblink ? (
-            // 1. 링크가 존재할 때: 활성화된 사각 버튼
+  
+  {/* 디자인은 그대로 유지, '빈 배열' 체크 로직만 적용 */}
+  {obj.weblink && obj.weblink.length > 0 ? (
             <Link 
               href={obj.weblink} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="w-[80%] mx-auto md:mx-0 md:w-full px-8 py-3 md:py-4 border pr-3 md:pr-0 bg-sky-500 md:bg-transparent border-sky-500 text-sky-400 font-bold text-sm md:text-base tracking-[0.2em] rounded-sm hover:bg-sky-500 hover:text-white transition-all duration-300 flex items-center gap-2 md:gap-3 group justify-center"
+      className="w-[80%] mx-auto md:mx-0 md:w-full px-8 py-3 md:py-4 border pr-3 md:pr-0 bg-sky-500 md:bg-transparent border-sky-500 text-sky-400 font-bold text-sm md:text-base tracking-[0.2em] rounded-sm hover:bg-sky-500 hover:text-white transition-all duration-300 flex items-center gap-2 md:gap-3 group justify-center"
             >
               홈페이지 
               <span className="group-hover:translate-x-1 transition-transform">→</span>
             </Link>
           ) : (
-            // 2. 링크가 없을 때: 비활성화된 사각 버튼
             <button 
               disabled
-              className="px-8 py-4 border border-white/10 text-gray-500 font-bold text-sm md:text-base tracking-[0.2em] rounded-sm cursor-not-allowed bg-white/5"
+      className="w-[80%] mx-auto md:mx-0 md:w-full px-8 py-3 md:py-4 border border-white/10 text-gray-500 font-bold text-sm md:text-base tracking-[0.2em] rounded-sm cursor-not-allowed bg-white/5"
             >
               링크 없음
             </button>
