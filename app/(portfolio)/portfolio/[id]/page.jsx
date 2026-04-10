@@ -82,61 +82,67 @@ export default async function Portfolio({ params }) {
         )}
         </div>
 
-        {/* 상세 스펙 테이블 스타일 */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 bg-white/5 p-6 md:p-10 backdrop-blur-sm border border-white/10 rounded-sm">
+{/* 상세 스펙 테이블 스타일 */}
+<div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 bg-white/5 p-6 md:p-10 backdrop-blur-sm border border-white/10 rounded-sm">
   
-  {/* Composition 섹션 */}
-  <div className="flex flex-col gap-5">
-    <h3 className="text-sky-500 text-sm font-bold tracking-[0.3em] uppercase border-b border-white/10 pb-2 w-fit">
-      Composition
-    </h3>
-    <div className="flex flex-wrap gap-3">
-      {obj.composition?.map((item, index) => (
-        <span 
-          key={`comp-${index}`} 
-          className="px-4 py-2 bg-white/10 rounded-full text-[12px] md:text-sm font-medium text-gray-200 border border-white/5"
-        >
-          {item}
-        </span>
-      ))}
-          </div>
-        </div>
-
-  {/* Key Features 섹션 */}
-  <div className="flex flex-col gap-5">
-    <h3 className="text-sky-500 text-sm font-bold tracking-[0.3em] uppercase border-b border-white/10 pb-2 w-fit">
-      Key Features
-    </h3>
-    <div className="flex flex-wrap gap-3">
-      {obj.features?.map((item, index) => (
-        <span 
-          key={`feat-${index}`} 
-          className="px-4 py-2 bg-white/10 rounded-full text-[12px] md:text-sm font-medium text-gray-200 border border-white/5"
-        >
-          # {item}
-        </span>
-      ))}
+  {/* 1. Composition 섹션: 데이터가 있을 때만 생성 */}
+  {obj.composition && obj.composition.length > 0 && (
+    <div className="flex flex-col gap-5">
+      <h3 className="text-sky-500 text-sm font-bold tracking-[0.3em] uppercase border-b border-white/10 pb-2 w-fit">
+        Composition
+      </h3>
+      <div className="flex flex-wrap gap-3">
+        {obj.composition.map((item, index) => (
+          <span 
+            key={`comp-${index}`} 
+            className="px-4 py-2 bg-white/10 rounded-full text-[12px] md:text-sm font-medium text-gray-200 border border-white/5"
+          >
+            {item}
+          </span>
+        ))}
+      </div>
     </div>
-  </div>
+  )}
 
-  {/* Language 섹션 */}
-  <div className="flex flex-col gap-5 md:col-span-2 md:border-t-0 border-white/5 pt-5 md:pt-0">
-    <h3 className="text-sky-500 text-sm font-bold tracking-[0.3em] uppercase border-b border-white/10 pb-2 w-fit">
-      Use Language
-    </h3>
-    <div className="flex flex-wrap gap-3">
-      {obj.Language?.map((item, index) => (
-        <span 
-          key={`lang-${index}`} 
-          className="px-4 py-2 bg-sky-500/10 rounded-full text-[12px] md:text-sm font-bold text-sky-400 border border-sky-500/20 uppercase"
-        >
-          {item}
-        </span>
-      ))}
+  {/* 2. Key Features 섹션: 데이터가 있을 때만 생성 */}
+  {obj.features && obj.features.length > 0 && (
+    <div className="flex flex-col gap-5">
+      <h3 className="text-sky-500 text-sm font-bold tracking-[0.3em] uppercase border-b border-white/10 pb-2 w-fit">
+        Key Features
+      </h3>
+      <div className="flex flex-wrap gap-3">
+        {obj.features.map((item, index) => (
+          <span 
+            key={`feat-${index}`} 
+            className="px-4 py-2 bg-white/10 rounded-full text-[12px] md:text-sm font-medium text-gray-200 border border-white/5"
+          >
+            # {item}
+          </span>
+        ))}
+      </div>
     </div>
-  </div>
+  )}
 
-        </div> {/* grid 끝 */}
+  {/* 3. Language 섹션: 데이터가 있을 때만 생성 및 PC에서 2칸 차지 */}
+  {obj.Language && obj.Language.length > 0 && (
+    <div className="flex flex-col gap-5 md:col-span-2">
+      <h3 className="text-sky-500 text-sm font-bold tracking-[0.3em] uppercase border-b border-white/10 pb-2 w-fit">
+        Use Language
+      </h3>
+      <div className="flex flex-wrap gap-3">
+        {obj.Language.map((item, index) => (
+          <span 
+            key={`lang-${index}`} 
+            className="px-4 py-2 bg-sky-500/10 rounded-full text-[12px] md:text-sm font-bold text-sky-400 border border-sky-500/20 uppercase"
+          >
+            {item}
+          </span>
+        ))}
+      </div>
+    </div>
+  )}
+
+</div> {/* grid 끝 */}
       </section>
 
       <h2 className="text-2xl md:text-5xl font-bold text-center title-mixed-font mt-10 mb-12 md:mb-26">DETAIL&ensp;IMAGES</h2>
