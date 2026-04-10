@@ -64,8 +64,8 @@ export default async function Portfolio({ params }) {
   
   {/* 1. 링크가 있는 경우 (문자열이 비어있지 않거나, 배열에 내용이 있을 때) */}
   {obj.weblink && (typeof obj.weblink === 'string' ? obj.weblink !== "" : obj.weblink.length > 0) ? (
-    <div className="flex flex-wrap gap-3 w-[80%] mx-auto md:mx-0 md:w-full justify-center md:justify-start">
-      {/* 2. 배열인지 문자열인지 판단하여 맵핑 또는 단일 출력 */}
+    /* 모바일: 1열 그리드(세로 나열) / PC: 유연한 flex(가로 나열) */
+    <div className="grid grid-cols-1 md:flex md:flex-wrap gap-3 w-[85%] md:w-full mx-auto md:mx-0 justify-center md:justify-start">
       {Array.isArray(obj.weblink) ? (
         obj.weblink.map((url, index) => (
           <Link
@@ -73,7 +73,7 @@ export default async function Portfolio({ params }) {
             href={url}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 min-w-[140px] px-6 py-3 md:py-4 border bg-sky-500 md:bg-transparent border-sky-500 text-sky-400 font-bold text-sm md:text-base tracking-[0.2em] rounded-sm hover:bg-sky-500 hover:text-white transition-all duration-300 flex items-center gap-2 group justify-center"
+            className="flex-1 w-full md:min-w-[140px] px-6 py-3 md:py-4 border bg-sky-500 md:bg-transparent border-sky-500 text-sky-400 font-bold text-sm md:text-base tracking-[0.2em] rounded-sm hover:bg-sky-500 hover:text-white transition-all duration-300 flex items-center gap-2 group justify-center"
           >
             {obj.weblink.length > 1 ? `홈페이지 ${index + 1}` : "홈페이지"}
             <span className="group-hover:translate-x-1 transition-transform">→</span>
