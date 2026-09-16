@@ -1,4 +1,7 @@
+"use client";
+import React from 'react';
 import Link from "next/link"
+import { useRouter } from "next/navigation";
 import { dataobj1, dataobj2 } from "../../../page"
 import ParticleBackground from "../../../../jsx/particle_Bg";
 import ColorScrollBlock from "../../../../jsx/ColorScrollBlock";
@@ -16,19 +19,27 @@ export async function getData(id) {
     return item;
 }
 
-export default async function Portfolio({ params }) {
-  const { id } = await params;
-  const obj = await getData(id);
+export default function Portfolio({ params }) {
+  // Changed from async to sync to allow hooks
+  const { id } = React.use(params);
+  const [obj, setObj] = React.useState(null);
+  const router = useRouter();
+
+  React.useEffect(() => {
+    getData(id).then(setObj);
+  }, [id]);
+
+  if (!obj) return null;
 
   return (
     <div className="w-full min-h-screen relative bg-[#181818] text-white font-sans overflow-x-hidden">
 
-      <Link
+      <button
+        onClick={() => router.back()}
         className="fixed right-5 top-4 md:top-8 md:right-8 w-13 md:w-16 h-13 md:h-16 border-3 border-white rounded-[6px] cursor-pointer z-[200] flex items-center justify-center opacity-75 md:opacity-85 hover:opacity-100 hover:scale-110 duration-200"
-        href="/"
       >
         <img src="/img/icon_home.svg" alt="홈화면 이동" className="w-11 md:w-14 h-11 md:h-14" />
-      </Link>
+      </button>
 
 
       <section className="relative w-full md:h-[70vh] overflow-hidden pt-20 md:pt-0">

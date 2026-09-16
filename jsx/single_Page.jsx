@@ -80,11 +80,11 @@ export function PageNum4Bottom() {
         isMobile 
         ?   (
                 setIconData([...iconDataM]),
-                setGroupSizes([3, 4, 3, 4, 3])
+                setGroupSizes([3, 5, 5, 5, 3])
             )
         :   (
                 setIconData([...iconDataPC]),
-                setGroupSizes([2, 4, 5, 4, 2])
+                setGroupSizes([3, 5, 5, 5, 3])
             )
     },[isMobile])
 
@@ -205,11 +205,12 @@ export function PageNum5({pageIdx}) { // 5페이지 - 인적사항 + Footer
                         <h4 className="text-[18px] md:text-[26px] relative z-10 font-bold mt-4 md:mt-3 2xl:mt-7 text-[#ff4d5a] title-mixed-font">CAREER</h4>
                         <div className="flex-1 flex items-center md:items-start justify-center">
                             <ul className="w-full h-full flex flex-col justify-between py-4 md:py-0 2xl:pb-7">
-                                <li className="max-[350px]:text-[11px] text-[12px] md:text-[14px] 2xl:text-[18px] whitespace-nowrap weight-clear-300">미림미디어랩<Br/>( 2022.06 ~ 2023.09 )</li>
+                                <li className="max-[350px]:text-[11px] text-[12px] md:text-[14px] 2xl:text-[18px] whitespace-nowrap weight-clear-300">미림미디어랩 [ 정규직 ]<Br/>( 2022.06 ~ 2023.09 )</li>
                                 <li className="max-[350px]:text-[11px] text-[12px] md:text-[14px] 2xl:text-[18px] whitespace-nowrap weight-clear-300">미림미디어랩 [ 프리랜서 ]<Br/>( 2023.10 ~ 2023.12 )</li>
-                                <li className="max-[350px]:text-[11px] text-[12px] md:text-[14px] 2xl:text-[18px] whitespace-nowrap weight-clear-300">다락컴퍼니<Br/>( 2024.02 ~ 2025.04 )</li>
+                                <li className="max-[350px]:text-[11px] text-[12px] md:text-[14px] 2xl:text-[18px] whitespace-nowrap weight-clear-300">다락컴퍼니  [ 정규직 ]<Br/>( 2024.02 ~ 2025.04 )</li>
                                 <li className="max-[350px]:text-[11px] text-[12px] md:text-[14px] 2xl:text-[18px] whitespace-nowrap weight-clear-300">비즈엠디지 [ 프리랜서 ]<Br/>( 2025.06 ~ 2025.10 )</li>
-                                <li className="max-[350px]:text-[11px] text-[12px] md:text-[14px] 2xl:text-[18px] whitespace-nowrap weight-clear-300">리얼스터디 [ 프리랜서 ]<Br/>( 2025.10 ~ 2026.02 )</li>
+                                <li className="max-[350px]:text-[11px] text-[12px] md:text-[14px] 2xl:text-[18px] whitespace-nowrap weight-clear-300">리얼스터디 [ 프리랜서 ]<br className="hidden md:inline-block"/><span className="md:hidden"> - </span>( 2025.10 ~ 2026.02 )</li>
+                                <li className="max-[350px]:text-[11px] text-[12px] md:text-[14px] 2xl:text-[18px] whitespace-nowrap weight-clear-300">스트리밍웨이  [ 정규직 ]<br className="hidden md:inline-block"/><span className="md:hidden"> - </span>( 2026.06 ~ ing )</li>
                             </ul>
                         </div>
                     </div>

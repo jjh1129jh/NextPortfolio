@@ -19,6 +19,23 @@ export default function FullPageScroll({ dataobjA, dataobjB }) {
   const [currentSlide3, setCurrentSlide3] = useState(0); // 3페이지(Commercial)
 
   useEffect(() => {
+    const lastPage = sessionStorage.getItem('lastVerticalPage');
+    if (lastPage && containerRef.current) {
+      const pageIndex = parseInt(lastPage, 10);
+      const section = document.getElementById(`section-${pageIndex}`);
+      if (section) {
+        // scrollIntoView가 제대로 작동하지 않을 수 있으므로, 컨테이너를 직접 스크롤합니다.
+        setTimeout(() => {
+          containerRef.current.scrollTo({
+            top: section.offsetTop,
+            behavior: 'smooth'
+          });
+        }, 100);
+      }
+    }
+  }, [totalArr]);
+
+  useEffect(() => {
     if (totalArr.length === 0) return;
 
     const observer = new IntersectionObserver(
@@ -185,6 +202,22 @@ export function HorizontalSlider({ sliderData, pageIdx, currentSlide, setCurrent
   const [activeId, setActiveId] = useState(null);
   const [isIgnoreClick, setIsIgnoreClick] = useState(false);
 
+  useEffect(() => {
+    const lastSlide = sessionStorage.getItem('lastPortfolioSlide');
+    if (lastSlide && scrollRef.current) {
+      const slideIndex = parseInt(lastSlide, 10);
+      setCurrentSlide(slideIndex);
+      setTimeout(() => {
+        if (scrollRef.current) {
+          scrollRef.current.scrollTo({
+            left: slideIndex * scrollRef.current.offsetWidth,
+            behavior: "auto"
+          });
+        }
+      }, 0);
+    }
+  }, []);
+
   const getX = (e) => (e.touches ? e.touches[0].pageX : e.pageX);
 
   const onDragStart = (e) => {
@@ -308,7 +341,11 @@ export function HorizontalSlider({ sliderData, pageIdx, currentSlide, setCurrent
                     ${!isMobile && activeId === item.id ? 'scale-[1.02] shadow-2xl' : 'scale-100 shadow-none'}`}
                       onClick={(e) => {
                         if (isMobile || activeId === item.id) {
-                          if (!isDrag && !isIgnoreClick) router.push(`/portfolio/${item.id}`);
+                          if (!isDrag && !isIgnoreClick) {
+                            sessionStorage.setItem('lastPortfolioSlide', currentSlide.toString());
+                            sessionStorage.setItem('lastVerticalPage', pageIdx.toString());
+                            router.push(`/portfolio/${item.id}`);
+                          }
                         } else {
                           e.preventDefault();
                         }

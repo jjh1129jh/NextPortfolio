@@ -1,11 +1,13 @@
 export const iconDataPC = [
     { file : "bootstrap", name : "BOOTSTRAP", style : "w-auto max-h-full scale-[80%]" },
     { file : "redux", name : "REDUX", style : "w-auto max-h-full" },
+    { file : "php", name : "PHP", style : "w-auto max-h-full scale-[80%]" },
     
     { file : "js", name : "JS", style : "w-auto max-h-full" },
     { file : "jquery", name : "JQUERY", style : "w-auto max-h-full scale-[85%]" },
     { file : "react", name : "REACT", style : "w-auto max-h-full" },
     { file : "next2", name : "NEXT.JS", style : "w-auto max-h-full" },
+    { file : "gemini", name : "GEMINI", style : "w-auto max-h-full" },
     
     { file : "html", name : "HTML", style : "w-auto max-h-full" },
     { file : "photoshop", name : "PHOTOSHOP", style : "w-auto max-h-full" },
@@ -17,9 +19,11 @@ export const iconDataPC = [
     { file : "scss", name : "SCSS / SASS", style : "w-auto max-h-full" },
     { file : "cssmodules", name : "CSS|MODULES", style : "w-auto max-h-full scale-[115%]" },
     { file : "tailwind", name : "TAILWIND", style : "w-auto max-h-full" },
+    { file : "cursor", name : "CURSOR", style : "w-auto max-h-full scale-[300%]" },
     
     { file : "rest", name : "REST.API", style : "w-auto max-h-full scale-[80%]" },
     { file : "git", name : "GIT HUB", style : "w-auto max-h-full scale-[110%]" },
+    { file : "clauder", name : "CLAUDE", style : "w-auto max-h-full scale-[240%]" },
 ]
 
 export const iconDataM = [
@@ -31,15 +35,19 @@ export const iconDataM = [
     { file : "lightroom", name : "LIGHTROOM", style : "w-auto max-h-full" },
     { file : "illustrator", name : "ILLUSTRATOR", style : "w-auto max-h-full" },
     { file : "figma", name : "FIGMA|(DEV MODE)", style : "w-auto max-h-full scale-[70%]" },
+    { file : "php", name : "PHP", style : "w-auto max-h-full scale-[80%]" },
 
     { file : "scss", name : "SCSS / SASS", style : "w-auto max-h-full" },
     { file : "cssmodules", name : "CSS|MODULES", style : "w-auto max-h-full scale-[90%]" },
     { file : "tailwind", name : "TAILWIND", style : "w-auto max-h-full" },
+    { file : "gemini", name : "GEMINI", style : "w-auto max-h-full" },
+    { file : "cursor", name : "CURSOR", style : "w-auto max-h-full scale-[190%]" },
 
     { file : "jquery", name : "JQUERY", style : "w-auto max-h-full scale-[85%]" },
     { file : "react", name : "REACT", style : "w-auto max-h-full" },
     { file : "next2", name : "NEXT.JS", style : "w-auto max-h-full" },
     { file : "redux", name : "REDUX", style : "w-auto max-h-full" },
+    { file : "clauder", name : "CLAUDE", style : "w-auto max-h-full scale-[180%]" },
 
     { file : "bootstrap", name : "BOOTSTRAP", style : "w-auto max-h-full scale-[80%]" },
     { file : "git", name : "GIT HUB", style : "w-auto max-h-full scale-[110%]" },
