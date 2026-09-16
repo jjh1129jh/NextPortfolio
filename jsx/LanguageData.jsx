@@ -8,5 +8,6 @@ export const Language = [
   { value: "scss", src:"/img/svg_scss.svg" },
   { value: "bootstrap", src:"/img/svg_bootstrap.svg" },
   { value: "redux", src:"/img/svg_redux.svg" },
-  { value: "jquery", src:"/img/svg_jquery.svg" }
+  { value: "jquery", src:"/img/svg_jquery.svg" },
+  { value: "php", src:"/img/svg_php.svg" }
 ];
